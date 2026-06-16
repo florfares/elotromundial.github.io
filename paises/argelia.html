@@ -193,7 +193,7 @@
   .dzb .prod-tabs { display: flex; gap: 0; border: 1px solid var(--border); border-radius: 4px; overflow: hidden; margin-bottom: 32px; width: fit-content; }
   .dzb .prod-tab { padding: 10px 24px; font-size: 13px; cursor: pointer; background: var(--sand); color: var(--ink-muted); border: none; border-right: 1px solid var(--border); font-family: var(--font); transition: background 0.12s; }
   .dzb .prod-tab:last-child { border-right: none; }
-  .dzb .prod-tab.active { background: var(--ink); color: #3B0764; }
+  .dzb .prod-tab.active { background: var(--ink); color: var(--sand); }
   .dzb .prod-section { display: none; }
   .dzb .prod-section.visible { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
 
@@ -243,7 +243,7 @@
   /* ── FOOTER ── */
   .dzb .footer {
     background: var(--sand-dark);
-    color: #3B0764;
+    color: var(--ink-faint);
     text-align: center;
     padding: 32px 48px;
     font-size: 12px;
@@ -278,7 +278,7 @@
     transition: background 0.12s;
   }
   .dzb .ref-card:hover { background: #DDD6FE; }
-  .dzb .ref-org { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #3B0764; margin-bottom: 6px; }
+  .dzb .ref-org { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 6px; }
   .dzb .ref-title { font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 4px; line-height: 1.4; }
   .dzb .ref-desc { font-size: 12px; color: var(--ink-muted); line-height: 1.5; }
   .dzb .correction-box {
@@ -292,29 +292,29 @@
   .correction-
   .dzb .correction-body strong { font-weight: 500; color: var(--ink); }
   @media (max-width: 700px) {
-    .hero { padding: 48px 20px 40px; }
-    .hero-stats { gap: 28px; }
-    .container { padding: 0 20px; }
-    .section { padding: 48px 0; }
-    .chart-grid, .chart-grid-3, .synthesis-grid { grid-template-columns: 1fr; }
-    .prod-section.visible { grid-template-columns: 1fr; }
-    .nav-inner { padding: 0 20px; }
-    .metrics { grid-template-columns: 1fr 1fr; }
+    .dzb .hero { padding: 48px 20px 40px; }
+    .dzb .hero-stats { gap: 28px; }
+    .dzb .container { padding: 0 20px; }
+    .dzb .section { padding: 48px 0; }
+    .dzb .chart-grid, .dzb .chart-grid-3, .dzb .synthesis-grid { grid-template-columns: 1fr; }
+    .dzb .prod-section.visible { grid-template-columns: 1fr; }
+    .dzb .nav-inner { padding: 0 20px; }
+    .dzb .metrics { grid-template-columns: 1fr 1fr; }
   }
 
   /* ── Links globales ── */
-  .dzb a { color: #3B0764; text-decoration: none; }
+  .dzb a { color: var(--teal); text-decoration: none; }
   .dzb a:hover { color: #5B21B6; text-decoration: underline; }
 
   /* Links dentro de ref-card heredan el color del card */
-  .dzb .ref-card { color: #3B0764; text-decoration: none; }
-  .dzb .ref-card .ref-title { color: #3B0764; }
-  .dzb .ref-card .ref-desc { color: #3B0764; opacity: 0.75; }
+  .dzb .ref-card { color: var(--ink); text-decoration: none; }
+  .dzb .ref-card .ref-title { color: var(--ink); }
+  .dzb .ref-card .ref-desc { color: var(--ink-muted); }
   .dzb .ref-card:hover .ref-title { color: #5B21B6; }
 
   /* Links dentro de conclusiones (em > a) */
-  .dzb em a { color: #3B0764; }
-  .dzb em a:hover { color: #5B21B6; }
+  .dzb em a { color: var(--teal); }
+  .dzb em a:hover { color: var(--ink); }
 
 </style>
 <div class="dzb">
@@ -551,7 +551,7 @@
         <div class="cat-head"><span>🌽 Cereales</span><span class="cat-amt">$7.82 MM · 48.8%</span></div>
         <div class="prod-row"><div class="prod-name hl">Maíz (no semilla)</div><div class="prod-track"><div class="prod-fill" style="width:100%;background:#5B21B6"></div></div><div class="prod-val hl">$6.838 MM</div></div>
         <div class="prod-row"><div class="prod-name">Trigo (no duro, no semilla)</div><div class="prod-track"><div class="prod-fill" style="width:13.5%;background:#7C3AED"></div></div><div class="prod-val">$927 M</div></div>
-        <div class="prod-row"><div class="prod-name">Cebada (no semilla)</div><div class="prod-track"><div class="prod-fill" style="width:0.8%;background:#A78BFA"></div></div><div class="prod-val">$54 M</div></div>
+        <div class="prod-row"><div class="prod-name">Cebada (no semilla)</div><div class="prod-track"><div class="prod-fill" style="width:0.8%;background:var(--teal)"></div></div><div class="prod-val">$54 M</div></div>
         <div class="note-box">Argentina es uno de los 3–5 principales exportadores mundiales de maíz y trigo. Argelia importa anualmente entre 5–8 MM de toneladas de granos para su industria molinera y alimentaria.</div>
 
         <div class="cat-head"><span>🫘 Complejo soja</span><span class="cat-amt">$4.41 MM · 27.5%</span></div>
@@ -613,7 +613,7 @@
         <div class="cat-head"><span>🐟 Productos del mar</span><span class="cat-amt">$48 M · 4.8%</span></div>
         <div class="prod-row"><div class="prod-name hl">Filetes de merluza congelados</div><div class="prod-track"><div class="prod-fill" style="width:100%;background:#5B21B6"></div></div><div class="prod-val hl">$18 M</div></div>
         <div class="prod-row"><div class="prod-name">Langostinos congelados</div><div class="prod-track"><div class="prod-fill" style="width:72%;background:#7C3AED"></div></div><div class="prod-val">$13 M</div></div>
-        <div class="prod-row"><div class="prod-name">Calamar / calamar volador</div><div class="prod-track"><div class="prod-fill" style="width:16%;background:#A78BFA"></div></div><div class="prod-val">$3 M</div></div>
+        <div class="prod-row"><div class="prod-name">Calamar / calamar volador</div><div class="prod-track"><div class="prod-fill" style="width:16%;background:var(--teal)"></div></div><div class="prod-val">$3 M</div></div>
         <div class="note-box">Dato paradójico: Argentina le compra a Argelia sus propios productos del mar (merluza, langostinos). Se trata posiblemente de capturas con bandera argelina en el Atlántico Sur o reexportaciones de producto de origen argentino.</div>
 
         <div class="cat-head"><span>🥩 Carne vacuna</span><span class="cat-amt">$22 M · 2.2%</span></div>
@@ -688,18 +688,18 @@
 
     <!-- ATLAS HKS -->
     <div style="margin-top: 40px; margin-bottom: 40px;">
-      <p style="font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color:#3B0764; margin-bottom: 14px;">Atlas de Complejidad Económica · Harvard Growth Lab</p>
+      <p style="font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color:var(--ink-faint); margin-bottom: 14px;">Atlas de Complejidad Económica · Harvard Growth Lab</p>
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
         <a href="https://atlas.hks.harvard.edu/countries/12" target="_blank" rel="noopener"
            style="display:block; background:#fff; border:1px solid var(--border); border-left:3px solid #5B21B6; border-radius:0 4px 4px 0; padding:16px 20px; text-decoration:none; transition:background 0.12s;"
-           onmouseover="this.style.background='#EDE9FE'" onmouseout="this.style.background='#fff'">
+           onmouseover="this.style.background='var(--sand-dark)'" onmouseout="this.style.background='#fff'">
           <div style="font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:6px;">DZA · Argelia</div>
           <div style="font-size:14px;font-weight:500;color:var(--ink);margin-bottom:4px;">Perfil de complejidad económica</div>
           <div style="font-size:12px;color:var(--ink-muted);">Exportaciones, complejidad del producto, espacio del producto y oportunidades de diversificación para Argelia según el Atlas HKS.</div>
         </a>
         <a href="https://atlas.hks.harvard.edu/countries/32" target="_blank" rel="noopener"
            style="display:block; background:#fff; border:1px solid var(--border); border-left:3px solid #5B21B6; border-radius:0 4px 4px 0; padding:16px 20px; text-decoration:none; transition:background 0.12s;"
-           onmouseover="this.style.background='#EDE9FE'" onmouseout="this.style.background='#fff'">
+           onmouseover="this.style.background='var(--sand-dark)'" onmouseout="this.style.background='#fff'">
           <div style="font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:6px;">ARG · Argentina</div>
           <div style="font-size:14px;font-weight:500;color:var(--ink);margin-bottom:4px;">Perfil de complejidad económica</div>
           <div style="font-size:12px;color:var(--ink-muted);">Exportaciones, complejidad del producto, espacio del producto y oportunidades de diversificación para Argentina según el Atlas HKS.</div>
@@ -709,7 +709,7 @@
 
     <!-- REFERENCIAS -->
     <div style="margin-top: 40px;">
-      <p style="font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color:#3B0764; margin-bottom: 16px;">Fuentes y referencias primarias</p>
+      <p style="font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color:var(--ink-faint); margin-bottom: 16px;">Fuentes y referencias primarias</p>
       <div class="ref-grid">
         <a class="ref-card" href="https://www.fao.org/giews/countrybrief/country.jsp?code=DZA" target="_blank" rel="noopener">
           <div class="ref-org">FAO · GIEWS</div>
@@ -866,11 +866,11 @@ new Chart(document.getElementById('chartShareDza'), {
 });
 
 // ── PRODUCT TABS ──
-function showProd(id, btn) {
+window.showProd = function(id, btn) {
   var scope = btn.closest('.dzb');
   scope.querySelectorAll('.prod-section').forEach(s => s.classList.remove('visible'));
   scope.querySelectorAll('.prod-tab').forEach(b => b.classList.remove('active'));
   scope.querySelector('#prod-' + id).classList.add('visible');
   btn.classList.add('active');
-}
+};
 </script>

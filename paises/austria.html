@@ -250,42 +250,42 @@
     transition: background 0.12s;
   }
   .aut .ref-card:hover { background: #FECACA; }
-  .aut .ref-org { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #4C0519; margin-bottom: 6px; }
+  .aut .ref-org { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 6px; }
   .aut .ref-title { font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 4px; line-height: 1.4; }
   .aut .ref-desc { font-size: 12px; color: var(--ink-muted); line-height: 1.5; }
 
   /* ── FOOTER ── */
   .aut .report-footer {
-    background: var(--sand-dark); color: #4C0519;
+    background: var(--sand-dark); color: var(--ink-muted);
     font-family: var(--mono); font-size: 11px;
     text-align: center; padding: 24px 48px;
     letter-spacing: 0.04em;
   }
 
   @media (max-width: 700px) {
-    .hero { padding: 48px 20px 40px; }
-    .hero-stats { gap: 28px; }
-    .container { padding: 0 20px; }
-    .section { padding: 48px 0; }
-    .chart-grid, .chart-grid-3, .synthesis-grid { grid-template-columns: 1fr; }
-    .prod-section.visible { grid-template-columns: 1fr; }
-    .nav-inner { padding: 0 20px; }
-    .metrics { grid-template-columns: 1fr 1fr; }
+    .aut .hero { padding: 48px 20px 40px; }
+    .aut .hero-stats { gap: 28px; }
+    .aut .container { padding: 0 20px; }
+    .aut .section { padding: 48px 0; }
+    .aut .chart-grid, .aut .chart-grid-3, .aut .synthesis-grid { grid-template-columns: 1fr; }
+    .aut .prod-section.visible { grid-template-columns: 1fr; }
+    .aut .nav-inner { padding: 0 20px; }
+    .aut .metrics { grid-template-columns: 1fr 1fr; }
   }
 
   /* ── Links globales ── */
-  .aut a { color: #4C0519; text-decoration: none; }
+  .aut a { color: var(--teal); text-decoration: none; }
   .aut a:hover { color: #881337; text-decoration: underline; }
 
   /* Links dentro de ref-card heredan el color del card */
-  .aut .ref-card { color: #4C0519; text-decoration: none; }
-  .aut .ref-card .ref-title { color: #4C0519; }
-  .aut .ref-card .ref-desc { color: #4C0519; opacity: 0.75; }
+  .aut .ref-card { color: var(--ink); text-decoration: none; }
+  .aut .ref-card .ref-title { color: var(--ink); }
+  .aut .ref-card .ref-desc { color: var(--ink-muted); }
   .aut .ref-card:hover .ref-title { color: #881337; }
 
   /* Links dentro de conclusiones (em > a) */
-  .aut em a { color: #4C0519; }
-  .aut em a:hover { color: #881337; }
+  .aut em a { color: var(--teal); }
+  .aut em a:hover { color: var(--ink); }
 
 </style>
 <div class="aut">
@@ -630,7 +630,7 @@
 
     <!-- ATLAS HKS -->
     <div style="margin-top:40px; margin-bottom:40px;">
-      <p style="font-family:var(--mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#4C0519;margin-bottom:14px;">Atlas de Complejidad Económica · Harvard Growth Lab</p>
+      <p style="font-family:var(--mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:14px;">Atlas de Complejidad Económica · Harvard Growth Lab</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
         <a href="https://atlas.hks.harvard.edu/countries/14" target="_blank" rel="noopener"
            style="display:block;background:#fff;border:1px solid var(--border);border-left:3px solid #B91C1C;border-radius:0 4px 4px 0;padding:16px 20px;text-decoration:none;transition:background 0.12s;"
@@ -650,7 +650,7 @@
     </div>
 
     <div style="margin-top:40px;">
-      <p style="font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#4C0519;margin-bottom:16px;">Fuentes y referencias</p>
+      <p style="font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:16px;">Fuentes y referencias</p>
 
       <div class="ref-grid">
 
@@ -817,7 +817,7 @@ window.showProdAut = function(id, btn) {
   scope.querySelectorAll('.prod-tab').forEach(b => b.classList.remove('active'));
   scope.querySelector('#aut-prod-' + id).classList.add('visible');
   btn.classList.add('active');
-};
+};;
 
 // Nav active on scroll
 const navLinks = document.querySelectorAll('.nav a');
