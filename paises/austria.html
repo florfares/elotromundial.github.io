@@ -1,0 +1,843 @@
+<!-- Argentina – Austria: informe completo -->
+<style>
+
+
+
+
+
+  400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+  {
+    --sand: #FFF5F5;
+    --sand-dark: #FEE2E2;
+    --ink: #1A1916;
+    --ink-muted: #5A5750;
+    --ink-faint: #9A9690;
+    --teal: #B91C1C;
+    --teal-light: #FEE2E2;
+    --coral: #7F1D1D;
+    --coral-light: #FEF2F2;
+    --blue: #1E3A5F;
+    --blue-light: #E0E7FF;
+    --gold: #B07C1A;
+    --gold-light: #FAF0D6;
+    --border: rgba(26,25,22,0.12);
+    --border-strong: rgba(26,25,22,0.22);
+    --font: 'IBM Plex Sans', system-ui, sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+  }
+
+  .aut-
+
+  /* ── HERO ── */
+  .aut .hero {
+    background: var(--ink);
+    color: #4C0519;
+    padding: 80px 48px 64px;
+    position: relative;
+    overflow: hidden;
+  }
+  .aut .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -80px;
+    width: 420px; height: 420px;
+    border-radius: 50%;
+    background: rgba(185,28,28,0.18);
+    pointer-events: none;
+  }
+  .aut .hero-eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #4C0519;
+    margin-bottom: 20px;
+  }
+  .aut .hero h1 {
+    font-size: clamp(32px, 5vw, 58px);
+    font-weight: 300;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    max-width: 680px;
+    margin-bottom: 24px;
+  }
+  .aut .hero h1 strong { font-weight: 600; color: #FCA5A5; }
+  .aut .hero-sub {
+    font-size: 16px;
+    color: #4C0519;
+    max-width: 520px;
+    line-height: 1.65;
+    margin-bottom: 48px;
+  }
+  .aut .hero-stats {
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+  .aut .hero-stat-val {
+    font-size: 36px;
+    font-weight: 500;
+    color: #FCA5A5;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .aut .hero-stat-label {
+    font-size: 12px;
+    color: #4C0519;
+    margin-top: 4px;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── NAV ── */
+  .aut .nav {
+    position: sticky;
+    top: 0;
+    background: var(--ink);
+    z-index: 100;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .aut .nav-inner {
+    display: flex;
+    gap: 0;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 48px;
+    overflow-x: auto;
+  }
+  .aut .nav a {
+    display: block;
+    padding: 14px 0;
+    margin-right: 32px;
+    font-size: 13px;
+    color: #4C0519;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    transition: color 0.15s, border-color 0.15s;
+    letter-spacing: 0.02em;
+  }
+  .aut .nav a:hover { color: #4C0519; }
+  .aut .nav a.active { color: #FCA5A5; border-bottom-color: #FCA5A5; }
+
+  /* ── LAYOUT ── */
+  .aut .container { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
+  .aut .section { padding: 72px 0; border-bottom: 1px solid var(--border); }
+  .aut .section:last-child { border-bottom: none; }
+
+  .aut .section-eyebrow {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 10px;
+  }
+  .aut .section-title {
+    font-size: clamp(22px, 3vw, 32px);
+    font-weight: 400;
+    letter-spacing: -0.015em;
+    line-height: 1.15;
+    margin-bottom: 8px;
+  }
+  .aut .section-lead {
+    font-size: 16px;
+    color: var(--ink-muted);
+    max-width: 640px;
+    margin-bottom: 40px;
+    line-height: 1.7;
+  }
+
+  /* ── METRIC CARDS ── */
+  .aut .metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 40px;
+  }
+  .aut .metric {
+    background: var(--sand);
+    padding: 24px 20px;
+  }
+  .aut .metric-val {
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .aut .metric-label {
+    font-size: 12px;
+    color: var(--ink-faint);
+    letter-spacing: 0.03em;
+    line-height: 1.4;
+  }
+  .aut .c-teal { color: var(--teal); }
+  .aut .c-coral { color: var(--coral); }
+  .aut .c-blue { color: var(--blue); }
+  .aut .c-gold { color: var(--gold); }
+
+  /* ── CHART WRAPPERS ── */
+  .aut .chart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 40px; }
+  .aut .chart-grid-3 { display: grid; grid-template-columns: 2fr 1fr; gap: 32px; margin-bottom: 40px; }
+  .aut .chart-box { background: #FFFAFA; border: 1px solid var(--border); border-radius: 4px; padding: 24px; }
+  .aut .chart-box-title { font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-muted); margin-bottom: 16px; }
+  .aut .chart-wrap { position: relative; width: 100%; }
+
+  /* ── LEGEND ── */
+  .aut .legend { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 16px; }
+  .aut .legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--ink-muted); }
+  .aut .legend-dot { width: 8px; height: 8px; border-radius: 2px; flex-shrink: 0; }
+
+  /* ── BAR LIST ── */
+  .aut .bar-list { display: flex; flex-direction: column; gap: 8px; }
+  .aut .bar-row { display: grid; grid-template-columns: 80px 1fr 70px; align-items: center; gap: 10px; }
+  .aut .bar-name { font-size: 12px; color: var(--ink-muted); text-align: right; }
+  .aut .bar-name.hl { color: var(--teal); font-weight: 500; }
+  .aut .bar-track { height: 6px; background: var(--sand-dark); border-radius: 2px; overflow: hidden; }
+  .aut .bar-fill { height: 100%; border-radius: 2px; }
+  .aut .bar-val { font-size: 12px; font-weight: 500; font-family: var(--mono); }
+  .aut .bar-val.hl { color: var(--teal); }
+
+  /* ── SYNTHESIS ── */
+  .aut .synthesis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .aut .synth-card { background: #FFFAFA; border: 1px solid var(--border); border-radius: 4px; padding: 24px 28px; }
+  .aut .synth-card-title { font-size: 14px; font-weight: 600; margin-bottom: 10px; }
+  .synth-card-
+
+  /* ── PRODUCT DETAIL ── */
+  .aut .prod-tabs { display: flex; gap: 0; margin-bottom: 32px; border-bottom: 1px solid var(--border); }
+  .aut .prod-tab {
+    background: none; border: none; border-bottom: 2px solid transparent;
+    padding: 10px 20px 10px 0; margin-right: 24px; font-size: 13px; font-weight: 500;
+    color: var(--ink-muted); cursor: pointer; transition: color 0.15s, border-color 0.15s;
+    font-family: var(--font);
+  }
+  .aut .prod-tab.active { color: var(--teal); border-bottom-color: var(--teal); }
+  .aut .prod-section { display: none; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .aut .prod-section.visible { display: grid; }
+  .aut .cat-head { display: flex; justify-content: space-between; align-items: baseline; padding: 16px 0 8px; border-bottom: 1px solid var(--border-strong); margin-bottom: 8px; font-size: 13px; font-weight: 600; }
+  .aut .cat-amt { font-family: var(--mono); font-size: 12px; font-weight: 400; color: var(--ink-muted); }
+  .aut .prod-row { display: grid; grid-template-columns: 1fr 80px 80px; gap: 8px; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--border); }
+  .aut .prod-name { font-size: 12px; color: var(--ink-muted); }
+  .aut .prod-name.hl { color: var(--teal); font-weight: 500; }
+  .aut .prod-track { height: 4px; background: var(--sand-dark); border-radius: 2px; overflow: hidden; }
+  .aut .prod-fill { height: 100%; border-radius: 2px; }
+  .aut .prod-val { font-size: 12px; font-family: var(--mono); font-weight: 500; text-align: right; }
+  .aut .prod-val.hl { color: var(--teal); }
+  .aut .prod-note { font-size: 12px; color: var(--ink-faint); line-height: 1.6; padding: 12px 0 4px; }
+
+  /* ── CONCLUSIONS ── */
+  .aut .conclusion-grid { display: flex; flex-direction: column; gap: 20px; }
+  .aut .conclusion-item { background: #FFFAFA; border: 1px solid var(--border); border-radius: 4px; padding: 24px 28px; }
+  .aut .conclusion-num { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 6px; }
+  .aut .conclusion-title { font-size: 14px; font-weight: 500; margin-bottom: 8px; color: var(--ink); }
+  .conclusion-
+  .aut .conclusion-body strong { font-weight: 500; color: var(--ink); }
+
+  /* ── CORRECTION BOX ── */
+  .aut .correction-box {
+    background: #FFF7ED;
+    border: 1px solid #FCD34D;
+    border-radius: 4px;
+    padding: 20px 24px;
+    margin-bottom: 28px;
+  }
+  .aut .correction-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #8A6B1A; margin-bottom: 8px; }
+  .correction-
+  .aut .correction-body strong { font-weight: 500; color: var(--ink); }
+
+  /* ── REFERENCES ── */
+  .aut .ref-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-top: 32px; }
+  .aut .ref-card {
+    background: var(--sand-dark);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 16px 18px;
+    text-decoration: none;
+    display: block;
+    transition: background 0.12s;
+  }
+  .aut .ref-card:hover { background: #FECACA; }
+  .aut .ref-org { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: #4C0519; margin-bottom: 6px; }
+  .aut .ref-title { font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 4px; line-height: 1.4; }
+  .aut .ref-desc { font-size: 12px; color: var(--ink-muted); line-height: 1.5; }
+
+  /* ── FOOTER ── */
+  .aut .report-footer {
+    background: var(--sand-dark); color: #4C0519;
+    font-family: var(--mono); font-size: 11px;
+    text-align: center; padding: 24px 48px;
+    letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 700px) {
+    .hero { padding: 48px 20px 40px; }
+    .hero-stats { gap: 28px; }
+    .container { padding: 0 20px; }
+    .section { padding: 48px 0; }
+    .chart-grid, .chart-grid-3, .synthesis-grid { grid-template-columns: 1fr; }
+    .prod-section.visible { grid-template-columns: 1fr; }
+    .nav-inner { padding: 0 20px; }
+    .metrics { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* ── Links globales ── */
+  .aut a { color: #4C0519; text-decoration: none; }
+  .aut a:hover { color: #881337; text-decoration: underline; }
+
+  /* Links dentro de ref-card heredan el color del card */
+  .aut .ref-card { color: #4C0519; text-decoration: none; }
+  .aut .ref-card .ref-title { color: #4C0519; }
+  .aut .ref-card .ref-desc { color: #4C0519; opacity: 0.75; }
+  .aut .ref-card:hover .ref-title { color: #881337; }
+
+  /* Links dentro de conclusiones (em > a) */
+  .aut em a { color: #4C0519; }
+  .aut em a:hover { color: #881337; }
+
+</style>
+<div class="aut">
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container">
+    <h1>Comercio bilateral<br><strong>Argentina <span style="font-size:0.55em;font-weight:400;opacity:0.55;vertical-align:middle;letter-spacing:0.06em;">(ARG)</span> – Austria <span style="font-size:0.55em;font-weight:400;opacity:0.55;vertical-align:middle;letter-spacing:0.06em;">(AUT)</span></strong></h1>
+    <p class="hero-sub">Análisis del intercambio comercial bilateral, la relevancia relativa de cada país como socio del otro, y el detalle de productos exportados e importados. Datos: UN Comtrade, 2014–2025.</p>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-val">$73,8 M</div>
+        <div class="hero-stat-label">exportaciones ARG → AUT acumuladas</div>
+      </div>
+      <div>
+        <div class="hero-stat-val">$2,47 MM</div>
+        <div class="hero-stat-label">importaciones AUT → ARG acumuladas</div>
+      </div>
+      <div>
+        <div class="hero-stat-val">1:33,5 <span title="Por cada dólar que Argentina le vende a Austria, le compra 33,5. Se calcula como el cociente entre exportaciones e importaciones acumuladas 2014–2025: $73,8 M ÷ $2.469 M ≈ 1:33,5." style="font-size:14px;opacity:0.5;vertical-align:middle;cursor:help;">ⓘ</span></div>
+        <div class="hero-stat-label">ratio de asimetría comercial</div>
+      </div>
+      <div>
+        <div class="hero-stat-val">12 años</div>
+        <div class="hero-stat-label">serie histórica analizada</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#bilateral" class="active">I · Intercambio bilateral</a>
+    <a href="#relevancia">II · Relevancia relativa</a>
+    <a href="#productos">III · Detalle de productos</a>
+    <a href="#conclusiones">IV · Comentarios finales</a>
+  </div>
+</nav>
+
+<!-- ══ SECCIÓN I ══ -->
+<section class="section" id="bilateral">
+  <div class="container">
+    <p class="section-eyebrow">Sección I</p>
+    <h2 class="section-title">El intercambio bilateral</h2>
+    <p class="section-lead">La relación comercial es profundamente asimétrica: Argentina importa de Austria maquinaria industrial, farmacéuticos, motocicletas de alta cilindrada y bebidas no alcohólicas, mientras que sus exportaciones hacia ese país son modestas y concentradas en cueros, productos animales y vinos. El déficit acumulado a favor de Austria supera los $2,39 mil millones en doce años.</p>
+
+    <div class="metrics">
+      <div class="metric">
+        <div class="metric-val c-coral">$73,8 M</div>
+        <div class="metric-label">Exportaciones ARG → AUT<br>2014–2025</div>
+      </div>
+      <div class="metric">
+        <div class="metric-val c-teal">$2.469 M</div>
+        <div class="metric-label">Importaciones AUT → ARG<br>2014–2025</div>
+      </div>
+      <div class="metric">
+        <div class="metric-val c-teal">−$2.396 M</div>
+        <div class="metric-label">Déficit comercial<br>desfavorable a Argentina</div>
+      </div>
+      <div class="metric">
+        <div class="metric-val">$206 M</div>
+        <div class="metric-label">Promedio anual importado<br>desde Austria</div>
+      </div>
+    </div>
+
+    <div class="chart-grid-3">
+      <div class="chart-box">
+        <div class="chart-box-title">Evolución anual 2014–2025 · millones USD</div>
+        <div class="legend">
+          <div class="legend-item"><div class="legend-dot" style="background:#7F1D1D"></div>Exportaciones ARG → AUT</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#B91C1C"></div>Importaciones AUT → ARG</div>
+        </div>
+        <div class="chart-wrap" style="height:260px">
+          <canvas id="aut-chartEvolucion" role="img" aria-label="Evolución exportaciones e importaciones 2014-2025"></canvas>
+        </div>
+      </div>
+      <div class="chart-box">
+        <div class="chart-box-title">Composición exportaciones ARG → AUT</div>
+        <div class="legend">
+          <div class="legend-item"><div class="legend-dot" style="background:#B91C1C"></div>Cueros y pieles 31,0%</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#7F1D1D"></div>Prod. animales 20,7%</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#DC2626"></div>Autopartes 17,4%</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#EF4444"></div>Peletería 10,4%</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#F87171"></div>Vinos 8,8%</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#FCA5A5"></div>Frutas y jugos 4,5%</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#9A9690"></div>Otros 7,1%</div>
+        </div>
+        <div class="chart-wrap" style="height:200px">
+          <canvas id="aut-chartDonutExp" role="img" aria-label="Composición exportaciones argentinas a Austria"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="chart-grid">
+      <div class="chart-box">
+        <div class="chart-box-title">Balance comercial anual · déficit Argentina (millones USD)</div>
+        <div class="chart-wrap" style="height:180px">
+          <canvas id="aut-chartBalance" role="img" aria-label="Balance comercial anual desfavorable a Argentina"></canvas>
+        </div>
+      </div>
+      <div class="chart-box">
+        <div class="chart-box-title">Composición importaciones AUT → ARG</div>
+        <div class="legend">
+          <div class="legend-item"><div class="legend-dot" style="background:#B91C1C"></div>Maquinaria e industrial 37,7%</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#7F1D1D"></div>Farmacéuticos 14,5%</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#DC2626"></div>Autopartes 6,8%</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#EF4444"></div>Motocicletas (+250cc) 3,7%</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#F87171"></div>Bebidas no alcohólicas 2,7%</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#9A9690"></div>Otros 34,6%</div>
+        </div>
+        <div class="chart-wrap" style="height:170px">
+          <canvas id="aut-chartDonutImp" role="img" aria-label="Composición importaciones desde Austria"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECCIÓN II ══ -->
+<section class="section" id="relevancia">
+  <div class="container">
+    <p class="section-eyebrow">Sección II</p>
+    <h2 class="section-title">Relevancia relativa</h2>
+    <p class="section-lead">Austria es un socio marginal para las exportaciones argentinas pero un proveedor especializado y consistente para sus importaciones. Para Austria, Argentina es prácticamente invisible como destino comercial dentro de un universo de importaciones que supera los USD 200 mil millones anuales.</p>
+
+    <div class="chart-grid">
+      <!-- Austria para Argentina exportaciones -->
+      <div>
+        <div class="chart-box-title" style="font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;color:var(--ink-muted);margin-bottom:16px;">Austria como destino de exportación argentina · 2014–2025</div>
+        <div class="metrics" style="margin-bottom:20px;">
+          <div class="metric">
+            <div class="metric-val" style="font-size:22px;">&lt;0,1%</div>
+            <div class="metric-label">share del total exportado por Argentina</div>
+          </div>
+          <div class="metric">
+            <div class="metric-val c-teal" style="font-size:22px;">$6–20 M</div>
+            <div class="metric-label">exportaciones anuales promedio (2014–2017)</div>
+          </div>
+        </div>
+        <div class="chart-box" style="margin-bottom:16px;">
+          <div class="chart-box-title">Evolución exportaciones ARG → AUT (millones USD)</div>
+          <div class="chart-wrap" style="height:200px">
+            <canvas id="aut-chartExpAnual" role="img" aria-label="Exportaciones de Argentina a Austria por año"></canvas>
+          </div>
+        </div>
+        <div class="chart-box">
+          <div class="chart-box-title">Contexto: principales destinos exportación Argentina 2024</div>
+          <div class="bar-list">
+            <div class="bar-row"><div class="bar-name">Brasil</div><div class="bar-track"><div class="bar-fill" style="width:100%;background:#D3D1C7"></div></div><div class="bar-val">$13,6 MM</div></div>
+            <div class="bar-row"><div class="bar-name">EE.UU.</div><div class="bar-track"><div class="bar-fill" style="width:48%;background:#D3D1C7"></div></div><div class="bar-val">$6,5 MM</div></div>
+            <div class="bar-row"><div class="bar-name">Chile</div><div class="bar-track"><div class="bar-fill" style="width:47%;background:#D3D1C7"></div></div><div class="bar-val">$6,3 MM</div></div>
+            <div class="bar-row"><div class="bar-name">China</div><div class="bar-track"><div class="bar-fill" style="width:44%;background:#D3D1C7"></div></div><div class="bar-val">$6,0 MM</div></div>
+            <div class="bar-row"><div class="bar-name">India</div><div class="bar-track"><div class="bar-fill" style="width:29%;background:#D3D1C7"></div></div><div class="bar-val">$3,9 MM</div></div>
+            <div class="bar-row"><div class="bar-name hl">Austria</div><div class="bar-track"><div class="bar-fill" style="width:0.06%;background:#B91C1C"></div></div><div class="bar-val hl">$8,1 M</div></div>
+          </div>
+          <div style="font-size:11px;color:var(--ink-faint);margin-top:10px;font-family:var(--mono);">puesto estimado #60–80° entre los destinos de Argentina</div>
+        </div>
+      </div>
+
+      <!-- Austria como proveedor de Argentina -->
+      <div>
+        <div class="chart-box-title" style="font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;color:var(--ink-muted);margin-bottom:16px;">Austria como proveedor de Argentina · 2014–2025</div>
+        <div class="metrics" style="margin-bottom:20px;">
+          <div class="metric">
+            <div class="metric-val" style="font-size:22px;">~0,4%</div>
+            <div class="metric-label">share en importaciones totales de Argentina</div>
+          </div>
+          <div class="metric">
+            <div class="metric-val c-teal" style="font-size:22px;">$200–268 M</div>
+            <div class="metric-label">importaciones anuales desde Austria</div>
+          </div>
+        </div>
+        <div class="chart-box" style="margin-bottom:16px;">
+          <div class="chart-box-title">Evolución importaciones ARG ← AUT (millones USD)</div>
+          <div class="chart-wrap" style="height:200px">
+            <canvas id="aut-chartImpAnual" role="img" aria-label="Importaciones de Argentina desde Austria por año"></canvas>
+          </div>
+        </div>
+        <div class="chart-box">
+          <div class="chart-box-title">Argentina como origen de importaciones de Austria 2014</div>
+          <div class="bar-list">
+            <div class="bar-row"><div class="bar-name">Alemania</div><div class="bar-track"><div class="bar-fill" style="width:100%;background:#D3D1C7"></div></div><div class="bar-val">$52,7 MM</div></div>
+            <div class="bar-row"><div class="bar-name">Italia</div><div class="bar-track"><div class="bar-fill" style="width:16%;background:#D3D1C7"></div></div><div class="bar-val">$8,5 MM</div></div>
+            <div class="bar-row"><div class="bar-name">Suiza</div><div class="bar-track"><div class="bar-fill" style="width:16%;background:#D3D1C7"></div></div><div class="bar-val">$8,4 MM</div></div>
+            <div class="bar-row"><div class="bar-name">China</div><div class="bar-track"><div class="bar-fill" style="width:11%;background:#D3D1C7"></div></div><div class="bar-val">$5,9 MM</div></div>
+            <div class="bar-row"><div class="bar-name">Chequia</div><div class="bar-track"><div class="bar-fill" style="width:9%;background:#D3D1C7"></div></div><div class="bar-val">$4,9 MM</div></div>
+            <div class="bar-row"><div class="bar-name hl">Argentina</div><div class="bar-track"><div class="bar-fill" style="width:0.34%;background:#B91C1C"></div></div><div class="bar-val hl">$178 M</div></div>
+          </div>
+          <div style="font-size:11px;color:var(--ink-faint);margin-top:10px;font-family:var(--mono);">puesto n°53 entre los proveedores de Austria · 0,13% del total importado</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="synthesis-grid">
+      <div class="synth-card" style="border-left:3px solid var(--teal);">
+        <div class="synth-card-title">Austria para Argentina</div>
+        <div class="synth-card-body">Proveedor especializado y estable. Austria representa aproximadamente el 0,4% del total importado por Argentina, con valores anuales que oscilan entre $140 M y $268 M. Su relevancia no está en el volumen sino en la especificidad: maquinaria de alta precisión y farmacéuticos de nicho son bienes cuya sustitución de origen es compleja en el corto plazo.</div>
+      </div>
+      <div class="synth-card" style="border-left:3px solid var(--blue);">
+        <div class="synth-card-title">Argentina para Austria</div>
+        <div class="synth-card-body">Socio comercialmente marginal. Argentina representa menos del 0,01% del total importado por Austria (puesto n°53 en 2014), y sus exportaciones hacia ese país cayeron de $20 M en 2015 a menos de $1 M en años recientes. Para Austria —que comercia principalmente con Alemania, Italia, Suiza y el resto de la Unión Europea— Argentina no figura como destino ni proveedor relevante.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECCIÓN III ══ -->
+<section class="section" id="productos">
+  <div class="container">
+    <p class="section-eyebrow">Sección III</p>
+    <h2 class="section-title">Detalle de productos</h2>
+    <p class="section-lead">Desglose a nivel de partida arancelaria HS de los principales bienes intercambiados, acumulado 2014–2025 para exportaciones e importaciones reportadas por Argentina.</p>
+
+    <div class="prod-tabs">
+      <button class="prod-tab active" onclick="showProdAut('exp', this)">🇦🇷 Argentina exporta a Austria</button>
+      <button class="prod-tab" onclick="showProdAut('imp', this)">🇦🇹 Argentina importa de Austria</button>
+    </div>
+
+    <!-- EXPORTS -->
+    <div class="prod-section visible" id="aut-prod-exp">
+      <div>
+        <div class="cat-head"><span>🐄 Cueros y pieles bovinas</span><span class="cat-amt">$22,9 M · 31,0%</span></div>
+        <div class="prod-row"><div class="prod-name hl">Cueros bovinos curtidos (wet-blue)</div><div class="prod-track"><div class="prod-fill" style="width:100%;background:#B91C1C"></div></div><div class="prod-val hl">$22,2 M</div></div>
+        <div class="prod-row"><div class="prod-name">Cueros bovinos en crust</div><div class="prod-track"><div class="prod-fill" style="width:3%;background:#EF4444"></div></div><div class="prod-val">$0,7 M</div></div>
+        <p class="prod-note">Austria importa cueros semielaborados argentinos para su industria de marroquinería y calzado de alta gama. El wet-blue (curtido al cromo sin terminar) es el principal producto por volumen.</p>
+
+        <div class="cat-head" style="margin-top:20px;"><span>🥩 Productos animales y huevos</span><span class="cat-amt">$15,3 M · 20,7%</span></div>
+        <div class="prod-row"><div class="prod-name hl">Huevos de ave sin cáscara (procesados)</div><div class="prod-track"><div class="prod-fill" style="width:100%;background:#B91C1C"></div></div><div class="prod-val hl">$4,4 M</div></div>
+        <div class="prod-row"><div class="prod-name">Albúmina de huevo seca</div><div class="prod-track"><div class="prod-fill" style="width:75%;background:#DC2626"></div></div><div class="prod-val">$3,3 M</div></div>
+        <div class="prod-row"><div class="prod-name">Miel natural</div><div class="prod-track"><div class="prod-fill" style="width:73%;background:#DC2626"></div></div><div class="prod-val">$3,2 M</div></div>
+        <div class="prod-row"><div class="prod-name">Productos animales n.c.p.</div><div class="prod-track"><div class="prod-fill" style="width:56%;background:#EF4444"></div></div><div class="prod-val">$2,4 M</div></div>
+        <div class="prod-row"><div class="prod-name">Tripa, vejigas y estómagos de animales</div><div class="prod-track"><div class="prod-fill" style="width:20%;background:#F87171"></div></div><div class="prod-val">$0,9 M</div></div>
+
+        <div class="cat-head" style="margin-top:20px;"><span>🔩 Autopartes</span><span class="cat-amt">$12,8 M · 17,4%</span></div>
+        <div class="prod-row"><div class="prod-name hl">Partes de motores (heading 8409)</div><div class="prod-track"><div class="prod-fill" style="width:100%;background:#B91C1C"></div></div><div class="prod-val hl">$10,4 M</div></div>
+        <div class="prod-row"><div class="prod-name">Tableros y paneles eléctricos</div><div class="prod-track"><div class="prod-fill" style="width:24%;background:#EF4444"></div></div><div class="prod-val">$2,5 M</div></div>
+        <p class="prod-note">Argentina exporta partes de motores de combustión interna a Austria en el marco del comercio intra-firma automotriz. Refleja integración de cadenas de valor con presencia de multinacionales europeas.</p>
+      </div>
+
+      <div>
+        <div class="cat-head"><span>🦊 Peletería</span><span class="cat-amt">$7,7 M · 10,4%</span></div>
+        <div class="prod-row"><div class="prod-name hl">Pieles curtidas enteras (peletería)</div><div class="prod-track"><div class="prod-fill" style="width:100%;background:#B91C1C"></div></div><div class="prod-val hl">$7,7 M</div></div>
+        <p class="prod-note">Argentina es un exportador relevante de pieles de zorro y nutria hacia Europa Central. Austria es destino final para la industria de confección de alta gama.</p>
+
+        <div class="cat-head" style="margin-top:20px;"><span>🍷 Vinos</span><span class="cat-amt">$6,5 M · 8,8%</span></div>
+        <div class="prod-row"><div class="prod-name hl">Vino tranquilo en envase ≤2 litros</div><div class="prod-track"><div class="prod-fill" style="width:100%;background:#B91C1C"></div></div><div class="prod-val hl">$6,5 M</div></div>
+        <p class="prod-note">El Malbec mendocino tiene presencia en el mercado austriaco, aunque en volúmenes modestos frente a Francia, Italia y España. El canal es principalmente retail especializado y gastronomía.</p>
+
+        <div class="cat-head" style="margin-top:20px;"><span>🍎 Frutas y jugos</span><span class="cat-amt">$3,3 M · 4,5%</span></div>
+        <div class="prod-row"><div class="prod-name">Manzanas secas</div><div class="prod-track"><div class="prod-fill" style="width:100%;background:#B91C1C"></div></div><div class="prod-val">$0,65 M</div></div>
+        <div class="prod-row"><div class="prod-name">Jugo de cítricos n.c.p.</div><div class="prod-track"><div class="prod-fill" style="width:100%;background:#DC2626"></div></div><div class="prod-val">$2,1 M</div></div>
+        <div class="prod-row"><div class="prod-name">Peras frescas</div><div class="prod-track"><div class="prod-fill" style="width:30%;background:#EF4444"></div></div><div class="prod-val">$0,6 M</div></div>
+      </div>
+    </div>
+
+    <!-- IMPORTS -->
+    <div class="prod-section" id="aut-prod-imp">
+      <div>
+        <div class="cat-head"><span>⚙️ Maquinaria e industrial</span><span class="cat-amt">$931 M · 37,7%</span></div>
+        <div class="prod-row"><div class="prod-name hl">Maquinaria diversa cap. 84 (incl. inyección plásticos, elevadores)</div><div class="prod-track"><div class="prod-fill" style="width:100%;background:#B91C1C"></div></div><div class="prod-val hl">$652 M</div></div>
+        <div class="prod-row"><div class="prod-name">Grupos electrógenos (motor nafta)</div><div class="prod-track"><div class="prod-fill" style="width:16%;background:#DC2626"></div></div><div class="prod-val">$101 M</div></div>
+        <div class="prod-row"><div class="prod-name">Equipamiento eléctrico cap. 85</div><div class="prod-track"><div class="prod-fill" style="width:43%;background:#EF4444"></div></div><div class="prod-val">$280 M</div></div>
+        <p class="prod-note">Austria exporta maquinaria especializada de alta ingeniería: extrusoras para plásticos, filtros industriales, grupos electrógenos y equipos de elevación. Es el rubro de mayor valor y más difícil de sustituir.</p>
+
+        <div class="cat-head" style="margin-top:20px;"><span>💊 Farmacéuticos</span><span class="cat-amt">$357 M · 14,5%</span></div>
+        <div class="prod-row"><div class="prod-name hl">Medicamentos con hormonas (no insulina)</div><div class="prod-track"><div class="prod-fill" style="width:100%;background:#B91C1C"></div></div><div class="prod-val hl">$105 M</div></div>
+        <div class="prod-row"><div class="prod-name">Medicamentos mezclas n.c.p.</div><div class="prod-track"><div class="prod-fill" style="width:75%;background:#DC2626"></div></div><div class="prod-val">$79 M</div></div>
+        <div class="prod-row"><div class="prod-name">Antisueros y fracciones de sangre</div><div class="prod-track"><div class="prod-fill" style="width:70%;background:#DC2626"></div></div><div class="prod-val">$75 M</div></div>
+        <div class="prod-row"><div class="prod-name">Inmunológicos (anticuerpos monoclonales)</div><div class="prod-track"><div class="prod-fill" style="width:48%;background:#EF4444"></div></div><div class="prod-val">$51 M</div></div>
+        <div class="prod-row"><div class="prod-name">Antisueros fracción 300215</div><div class="prod-track"><div class="prod-fill" style="width:44%;background:#F87171"></div></div><div class="prod-val">$47 M</div></div>
+        <p class="prod-note">Austria es sede de empresas farmacéuticas de alta especialización en hemoderivados e inmunológicos. Los medicamentos con hormonas, los antisueros y las fracciones de sangre concentran más de $357 M del total importado desde Austria en el período analizado. Dado que estos productos requieren registros regulatorios específicos ante ANMAT, la sustitución de origen en el corto plazo es compleja.</p>
+      </div>
+
+      <div>
+        <div class="cat-head"><span>🏍️ Motocicletas (250–800cc+)</span><span class="cat-amt">$91,6 M · 3,7%</span></div>
+        <div class="prod-row"><div class="prod-name hl">Motos 250–500cc (HS 871130)</div><div class="prod-track"><div class="prod-fill" style="width:100%;background:#B91C1C"></div></div><div class="prod-val hl">$28,8 M</div></div>
+        <div class="prod-row"><div class="prod-name">Motos &gt;800cc (HS 871150)</div><div class="prod-track"><div class="prod-fill" style="width:89%;background:#DC2626"></div></div><div class="prod-val">$25,8 M</div></div>
+        <div class="prod-row"><div class="prod-name">Motos 50–250cc (HS 871120)</div><div class="prod-track"><div class="prod-fill" style="width:64%;background:#EF4444"></div></div><div class="prod-val">$18,6 M</div></div>
+        <div class="prod-row"><div class="prod-name">Motos 500–800cc (HS 871140)</div><div class="prod-track"><div class="prod-fill" style="width:60%;background:#F87171"></div></div><div class="prod-val">$17,6 M</div></div>
+        <p class="prod-note">Los códigos HS 871120 a 871150 registran importaciones de motocicletas de entre 50 cc y más de 800 cc originadas en Austria. Austria es sede del fabricante KTM AG (Mattighofen), que opera en Argentina a través del Grupo Simpa desde 2013, aunque Comtrade no desagrega por marca. Fuente de contexto: <a href="https://gentedemoto.com/ktm-ag-reactiva-produccion-austria-argentina/" target="_blank" rel="noopener" style="color:var(--teal);">Gente de Moto, agosto 2025</a>.</p>
+
+        <div class="cat-head" style="margin-top:20px;"><span>🚗 Cajas de cambio y autopartes</span><span class="cat-amt">$154 M · 6,2%</span></div>
+        <div class="prod-row"><div class="prod-name hl">Cajas de cambio y partes (870840)</div><div class="prod-track"><div class="prod-fill" style="width:100%;background:#B91C1C"></div></div><div class="prod-val hl">$126 M</div></div>
+        <div class="prod-row"><div class="prod-name">Silenciadores y caños de escape</div><div class="prod-track"><div class="prod-fill" style="width:9%;background:#EF4444"></div></div><div class="prod-val">$11 M</div></div>
+        <p class="prod-note">Las cajas de cambio y sus partes (HS 870840) constituyen el producto individual más importado desde Austria, con $126 M acumulados. Este flujo refleja la integración de cadenas de valor automotrices europeo-argentinas, donde los componentes de transmisión se importan para vehículos ensamblados localmente.</p>
+
+        <div class="cat-head" style="margin-top:20px;"><span>🧃 Bebidas no alcohólicas</span><span class="cat-amt">$66 M · 2,7%</span></div>
+        <div class="prod-row"><div class="prod-name hl">Bebidas no alcohólicas n.c.p. (HS 220299)</div><div class="prod-track"><div class="prod-fill" style="width:100%;background:#B91C1C"></div></div><div class="prod-val hl">$50 M</div></div>
+        <div class="prod-row"><div class="prod-name">Otras bebidas no alcohólicas (HS 220290)</div><div class="prod-track"><div class="prod-fill" style="width:29%;background:#DC2626"></div></div><div class="prod-val">$15 M</div></div>
+        <p class="prod-note">Los códigos HS 220290 y 220299 corresponden a bebidas no alcohólicas no especificadas en otra partida. Austria es sede de Red Bull GmbH (Fuschl am See), aunque Comtrade no desagrega por marca y este flujo puede incluir otros productos de la misma categoría arancelaria.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECCIÓN IV ══ -->
+<section class="section" id="conclusiones">
+  <div class="container">
+    <p class="section-eyebrow">Sección IV</p>
+    <h2 class="section-title">Comentarios finales</h2>
+    <p class="section-lead">Una lectura integrada del vínculo comercial, con referencias a fuentes primarias para cada conclusión.</p>
+
+    <div class="conclusion-grid">
+
+      <div class="conclusion-item">
+        <div class="conclusion-num">1 · Asimetría extrema</div>
+        <div class="conclusion-title">El ratio de 1:33,5 es el más desfavorable de los rivales de Argentina en el Mundial</div>
+        <div class="conclusion-body">Por cada dólar que Argentina vende a Austria, le compra 33,5. Este ratio —el más alto de los tres contrincantes del grupo— refleja una relación estructuralmente desequilibrada: <strong>Argentina es un proveedor prácticamente invisible para Austria</strong> (puesto #53, 0,13% de sus importaciones en 2014), mientras que Austria es un proveedor especializado que Argentina no puede reemplazar fácilmente por sus exportaciones de alta tecnología y farmacéuticos de nicho.</div>
+      </div>
+
+      <div class="conclusion-item">
+        <div class="conclusion-num">2 · Qué exporta Argentina: productos con identidad pero volumen mínimo</div>
+        <div class="conclusion-title">Cueros, miel, vino y autopartes: una canasta diversa pero de escala micro</div>
+        <div class="conclusion-body">El total exportado acumulado en 12 años ($73,8 M) equivale a menos de un mes de lo que Austria le vende a Argentina en un año típico. <strong>Los cueros wet-blue (31%), los productos animales procesados (20,7%) y las partes de motor (17,4%)</strong> son los tres rubros principales. El vino Malbec ($6,5 M) tiene presencia simbólica. La tendencia es decreciente: de $20 M en 2015 se pasó a menos de $1 M en 2020-2024, lo que sugiere pérdida de competitividad o reemplazo por otros orígenes en el mercado austriaco.</div>
+      </div>
+
+      <div class="conclusion-item">
+        <div class="conclusion-num">3 · Qué importa Argentina: alta tecnología, salud y marcas globales austriacas</div>
+        <div class="conclusion-title">Maquinaria, farmacéuticos, motocicletas de alta cilindrada y bebidas no alcohólicas: Austria exporta productos de alta especialización</div>
+        <div class="conclusion-body">Las importaciones desde Austria son consistentes ($140–268 M/año) y están dominadas por <strong>maquinaria industrial (37,7%), farmacéuticos (14,5%), cajas de cambio (5,1%), motocicletas de alta cilindrada (3,7%) y bebidas no alcohólicas (2,7%)</strong>, según los datos de UN Comtrade 2014–2025. Los rubros de mayor valor son de alta especialización tecnológica y farmacéutica: medicamentos con hormonas, antisueros, fracciones de sangre y grupos electrógenos concentran más de la mitad del valor importado. Los datos muestran que incluso en años de fuerte restricción de importaciones (2020, 2023), el flujo desde Austria no cayó por debajo de los $140 M anuales, lo que sugiere que una parte relevante de estas importaciones responde a necesidades no discrecionales. <em>Fuente: UN Comtrade, archivos TradeData_6_16_2026, metodología FOB.</em></div>
+      </div>
+
+      <div class="conclusion-item">
+        <div class="conclusion-num">4 · El acuerdo UE–Mercosur como variable de fondo</div>
+        <div class="conclusion-title">Austria votó en contra: el rechazo tiene base en resoluciones formales del Parlamento austriaco desde 2019</div>
+        <div class="conclusion-body">Austria fue uno de los cinco Estados miembros que votó en contra del acuerdo UE–Mercosur en el Consejo de la UE el 9 de enero de 2026. El rechazo no fue coyuntural: el Subcomité de Asuntos Europeos del Parlamento (Nationalrat) adoptó ya en septiembre de 2019 una resolución instando al gobierno a oponerse al acuerdo; en febrero de 2021 el Parlamento formalizó la Resolución 135/E («No al acuerdo Mercosur»), que vinculaba al gobierno. En debate parlamentario de febrero de 2026 en el Bundesrat, la Cámara de Agricultura de Baja Austria fue citada para confirmar que las salvaguardias negociadas resultaban insuficientes, y el Ministro de Agricultura había caracterizado el acuerdo como «gran carga». El acuerdo, aprobado por mayoría calificada, se aplica provisionalmente desde el 1 de mayo de 2026 e incluye un Reglamento de Salvaguardias Agrícolas adoptado el 5 de marzo de 2026 que permite suspender preferencias arancelarias ante aumentos drásticos de importaciones. <em>Fuentes: <a href="https://www.parlament.gv.at/gegenstand/XXVII/E/135" target="_blank" rel="noopener" style="color:var(--teal);">Parlamento de Austria — Resolución 135/E, febrero 2021</a>; <a href="https://www.parlament.gv.at/aktuelles/pk/jahr_2026/pk0091" target="_blank" rel="noopener" style="color:var(--teal);">Parlamento de Austria — Bundesrat, febrero 2026</a>; <a href="https://www.consilium.europa.eu/es/press/press-releases/2026/03/05/eu-mercosur-council-greenlights-safeguards-for-agricultural-products/" target="_blank" rel="noopener" style="color:var(--teal);">Consejo de la UE — Salvaguardias agrícolas, marzo 2026</a>.</em></div>
+      </div>
+
+      <div class="conclusion-item">
+        <div class="conclusion-num">5 · Perspectivas</div>
+        <div class="conclusion-title">Tres vectores concretos pueden reequilibrar parcialmente la relación: biotecnología, energía y el acuerdo UE–Mercosur</div>
+        <div class="conclusion-body">
+          <p style="margin-bottom:12px;"><strong>Biotecnología argentina hacia Austria.</strong> Según la Cancillería argentina y la Cámara Argentina de Biotecnología (CAB), el sector exporta <strong>USD 430 millones anuales</strong> y Argentina es uno de los 10 países más relevantes del mundo en la disciplina, siendo uno de los 12 que produce vacunas. Empresas como mAbxience —líder en anticuerpos monoclonales, con planta en Argentina y acuerdos con Abbott para mercados emergentes— y ELEA Phoenix —que ya exporta biosimilares oncológicos a Paraguay con miras a expandirse— son candidatas naturales para abrir canales en el mercado farmacéutico austriaco. La Cancillería organizó misiones comerciales biotecnológicas en BIO 2022 y 2023, con participación récord de empresas argentinas. <em>Fuentes: <a href="https://www.cancilleria.gob.ar/es/actualidad/noticias/treinta-empresas-argentinas-de-biotecnologia-participaron-de-mision-comercial-en" target="_blank" rel="noopener" style="color:var(--teal);">Cancillería Argentina, misión BIO 2023</a>; <a href="https://www.argentina.gob.ar/noticias/argentina-se-posiciona-como-referente-biotecnologico-mundial" target="_blank" rel="noopener" style="color:var(--teal);">Secretaría de Industria, mayo 2023</a>.</em></p>
+          <p style="margin-bottom:12px;"><strong>GNL de Vaca Muerta y equipamiento austriaco.</strong> En diciembre de 2025, Southern Energy (consorcio integrado por YPF, PAE, Pampa Energía, Harbour Energy y Golar LNG) firmó en Berlín el primer contrato de exportación de GNL a largo plazo de Argentina: <strong>2 millones de toneladas anuales a Europa durante 8 años</strong>, con entregas previstas desde fines de 2027, por un valor superior a USD 7.000 millones. La contraparte es SEFE (Securing Energy for Europe), empresa estatal alemana. Este posicionamiento energético de Argentina en Europa —donde Austria es importador neto de gas— puede generar demanda adicional de equipamiento especializado austriaco (turbinas, instrumentación, bombas de alta presión) para la infraestructura de producción y exportación. <em>Fuentes: <a href="https://www.infobae.com/economia/2026/05/06/vaca-muerta-la-argentina-exportara-gas-a-alemania-por-mas-de-7000-millones-y-se-suma-al-mapa-energetico-europeo/" target="_blank" rel="noopener" style="color:var(--teal);">Infobae, mayo 2026</a>; <a href="https://www.perfil.com/noticias/economia/vaca-muerta-llega-a-europa-argentina-formalizo-el-mayor-contrato-de-exportacion-de-gnl-del-pais-a40.phtml" target="_blank" rel="noopener" style="color:var(--teal);">Perfil, marzo 2026</a>.</em></p>
+          <p style="margin-bottom:12px;"><strong>El acuerdo UE–Mercosur: ya en vigor, con implicancias concretas para el comercio bilateral.</strong> El acuerdo se aplica provisionalmente desde el 1 de mayo de 2026 y prevé reducciones arancelarias sobre exportaciones argentinas de cueros, vinos y miel hacia Austria —los tres principales rubros actuales— aunque el impacto absoluto será modesto dado el bajo volumen de partida. La posición contraria de Austria en la votación del Consejo (9 de enero de 2026) estuvo sustentada en resoluciones formales del Nationalrat —cámara baja— (Resolución 135/E, febrero 2021) y del Bundesrat —cámara alta—, ambas opuestas al acuerdo por motivos agrícolas. El Consejo adoptó el 5 de marzo de 2026 un Reglamento de Salvaguardias Agrícolas que permite suspender preferencias arancelarias si las importaciones del Mercosur perjudican a los productores europeos, mecanismo que Austria podría activar. <em>Fuentes: <a href="https://www.consilium.europa.eu/es/policies/eu-mercosur-agreements-explained/" target="_blank" rel="noopener" style="color:var(--teal);">Consejo de la UE, mayo 2026</a>; <a href="https://www.parlament.gv.at/gegenstand/XXVII/E/135" target="_blank" rel="noopener" style="color:var(--teal);">Parlamento de Austria — Resolución 135/E</a>; <a href="https://www.consilium.europa.eu/es/press/press-releases/2026/03/05/eu-mercosur-council-greenlights-safeguards-for-agricultural-products/" target="_blank" rel="noopener" style="color:var(--teal);">Consejo de la UE — Salvaguardias agrícolas, marzo 2026</a>.</em></p>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ATLAS HKS -->
+    <div style="margin-top:40px; margin-bottom:40px;">
+      <p style="font-family:var(--mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#4C0519;margin-bottom:14px;">Atlas de Complejidad Económica · Harvard Growth Lab</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <a href="https://atlas.hks.harvard.edu/countries/14" target="_blank" rel="noopener"
+           style="display:block;background:#fff;border:1px solid var(--border);border-left:3px solid #B91C1C;border-radius:0 4px 4px 0;padding:16px 20px;text-decoration:none;transition:background 0.12s;"
+           onmouseover="this.style.background='#FEE2E2'" onmouseout="this.style.background='#fff'">
+          <div style="font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:6px;">AUT · Austria</div>
+          <div style="font-size:14px;font-weight:500;color:var(--ink);margin-bottom:4px;">Perfil de complejidad económica</div>
+          <div style="font-size:12px;color:var(--ink-muted);">Exportaciones, complejidad del producto, espacio del producto y oportunidades de diversificación para Austria según el Atlas HKS.</div>
+        </a>
+        <a href="https://atlas.hks.harvard.edu/countries/32" target="_blank" rel="noopener"
+           style="display:block;background:#fff;border:1px solid var(--border);border-left:3px solid #B91C1C;border-radius:0 4px 4px 0;padding:16px 20px;text-decoration:none;transition:background 0.12s;"
+           onmouseover="this.style.background='#FEE2E2'" onmouseout="this.style.background='#fff'">
+          <div style="font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:6px;">ARG · Argentina</div>
+          <div style="font-size:14px;font-weight:500;color:var(--ink);margin-bottom:4px;">Perfil de complejidad económica</div>
+          <div style="font-size:12px;color:var(--ink-muted);">Exportaciones, complejidad del producto, espacio del producto y oportunidades de diversificación para Argentina según el Atlas HKS.</div>
+        </a>
+      </div>
+    </div>
+
+    <div style="margin-top:40px;">
+      <p style="font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#4C0519;margin-bottom:16px;">Fuentes y referencias</p>
+
+      <div class="ref-grid">
+
+        <a class="ref-card" href="https://www.cancilleria.gob.ar/es/actualidad/noticias/treinta-empresas-argentinas-de-biotecnologia-participaron-de-mision-comercial-en" target="_blank" rel="noopener">
+          <div class="ref-org">Cancillería Argentina · CAB</div>
+          <div class="ref-title">Misión comercial biotecnológica BIO 2023</div>
+          <div class="ref-desc">Argentina exporta USD 430 millones anuales en biotecnología. El país es uno de los 10 más relevantes del mundo en la disciplina y uno de los 12 que produce vacunas.</div>
+        </a>
+        <a class="ref-card" href="https://www.perfil.com/noticias/economia/vaca-muerta-llega-a-europa-argentina-formalizo-el-mayor-contrato-de-exportacion-de-gnl-del-pais-a40.phtml" target="_blank" rel="noopener">
+          <div class="ref-org">Perfil · Southern Energy / SEFE</div>
+          <div class="ref-title">Vaca Muerta llega a Europa: mayor contrato de GNL de Argentina (marzo 2026)</div>
+          <div class="ref-desc">Southern Energy y SEFE firmaron la venta de 2 millones de toneladas anuales de GNL a Europa durante 8 años, con entregas desde fines de 2027, por más de USD 7.000 millones.</div>
+        </a>
+        <a class="ref-card" href="https://www.consilium.europa.eu/es/policies/eu-mercosur-agreements-explained/" target="_blank" rel="noopener">
+          <div class="ref-org">European Newsroom · APA</div>
+          <div class="ref-title">Los Estados de la UE aprueban el acuerdo con Mercosur — Austria está dividida (enero 2026)</div>
+          <div class="ref-desc">Austria votó en contra en el Consejo por presión del sector agrario. Los gremios empresariales austríacos se mostraron favorables al acuerdo.</div>
+        </a>
+        <a class="ref-card" href="https://comtrade.un.org" target="_blank" rel="noopener">
+          <div class="ref-org">UN Comtrade</div>
+          <div class="ref-title">Base de datos de comercio internacional</div>
+          <div class="ref-desc">Fuente primaria de todos los datos bilaterales ARG–AUT, 2014–2025. Metodología FOB. Archivos TradeData_6_16_2026.</div>
+        </a>
+        <a class="ref-card" href="https://www.statistik.at/fileadmin/announcement/2025/06/20250701Aussenhandel2024EN.pdf" target="_blank" rel="noopener">
+          <div class="ref-org">Statistics Austria</div>
+          <div class="ref-title">Foreign Trade 2024 (julio 2025)</div>
+          <div class="ref-desc">Estadísticas oficiales del comercio exterior austriaco. Total importaciones 2024: €189,26 MM. Principales socios comerciales.</div>
+        </a>
+        <a class="ref-card" href="https://ttd.wto.org/en/profiles/austria" target="_blank" rel="noopener">
+          <div class="ref-org">OMC · Tariff & Trade Data</div>
+          <div class="ref-title">Perfil comercial de Austria</div>
+          <div class="ref-desc">Rankings de socios importadores y exportadores de Austria. Confirma la posición marginal de Argentina como origen.</div>
+        </a>
+        <a class="ref-card" href="https://policy.trade.ec.europa.eu/eu-trade-relationships-country-and-region/countries-and-regions/argentina_en" target="_blank" rel="noopener">
+          <div class="ref-org">Comisión Europea · DG Trade</div>
+          <div class="ref-title">Relaciones comerciales UE–Argentina</div>
+          <div class="ref-desc">Contexto del acuerdo UE–Mercosur. La UE es el tercer socio comercial de Argentina (12,3% del total en 2024).</div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+</div>
+
+<script>
+// ── CHART DEFAULTS ──
+Chart.defaults.font.family = "'IBM Plex Sans', system-ui, sans-serif";
+Chart.defaults.font.size = 11;
+Chart.defaults.color = '#9A9690';
+Chart.defaults.plugins.legend.display = false;
+
+const years = ['2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025'];
+const exp    = [14.2, 20.0, 12.6, 12.9, 6.1, 1.7, 0.4, 0.3, 1.3, 4.0, 0.3, 0.0];
+const imp    = [200.3,167.7,168.0,200.6,199.1,201.0,139.7,182.8,255.9,268.1,219.4,266.6];
+const bal    = [-186.1,-147.7,-155.4,-187.7,-193.1,-199.4,-139.4,-182.5,-254.6,-264.1,-219.1,-266.6];
+
+// Evolución bilateral
+new Chart(document.getElementById('aut-chartEvolucion'), {
+  type: 'bar',
+  data: {
+    labels: years,
+    datasets: [
+      { label: 'Exp ARG→AUT', data: exp, backgroundColor: '#7F1D1D', stack: 'a' },
+      { label: 'Imp AUT→ARG', data: imp, backgroundColor: '#B91C1C', stack: 'b' }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: true, position: 'top', labels: { boxWidth: 10, font: { size: 11 } } } },
+    scales: {
+      x: { grid: { display: false }, ticks: { font: { size: 10 } } },
+      y: { grid: { color: 'rgba(0,0,0,0.05)' }, ticks: { callback: v => '$' + v + 'M' } }
+    }
+  }
+});
+
+// Donut exportaciones
+new Chart(document.getElementById('aut-chartDonutExp'), {
+  type: 'doughnut',
+  data: {
+    labels: ['Cueros y pieles','Prod. animales','Autopartes','Peletería','Vinos','Frutas y jugos','Otros'],
+    datasets: [{ data: [22.9, 15.3, 12.8, 7.7, 6.5, 3.3, 5.3],
+      backgroundColor: ['#B91C1C','#7F1D1D','#DC2626','#EF4444','#F87171','#FCA5A5','#9A9690'],
+      borderWidth: 0 }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    cutout: '62%',
+    plugins: { legend: { display: true, position: 'right', labels: { boxWidth: 8, font: { size: 10 }, padding: 6 } } }
+  }
+});
+
+// Balance
+new Chart(document.getElementById('aut-chartBalance'), {
+  type: 'bar',
+  data: {
+    labels: years,
+    datasets: [{ data: bal, backgroundColor: bal.map(() => '#B91C1C'), borderRadius: 2 }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    scales: {
+      x: { grid: { display: false }, ticks: { font: { size: 10 } } },
+      y: { grid: { color: 'rgba(0,0,0,0.05)' }, ticks: { callback: v => '$' + v + 'M' } }
+    }
+  }
+});
+
+// Donut importaciones
+new Chart(document.getElementById('aut-chartDonutImp'), {
+  type: 'doughnut',
+  data: {
+    labels: ['Maquinaria e industrial','Farmacéuticos','Autopartes','Motos (+250cc)','Bebidas no alcohólicas','Otros'],
+    datasets: [{ data: [931.4, 357.2, 167.7, 91.6, 66.1, 854.3],
+      backgroundColor: ['#B91C1C','#7F1D1D','#DC2626','#EF4444','#F87171','#9A9690'],
+      borderWidth: 0 }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    cutout: '62%',
+    plugins: { legend: { display: true, position: 'right', labels: { boxWidth: 8, font: { size: 10 }, padding: 6 } } }
+  }
+});
+
+// Exp anual (Sección II)
+new Chart(document.getElementById('aut-chartExpAnual'), {
+  type: 'line',
+  data: {
+    labels: years,
+    datasets: [{ data: exp, borderColor: '#B91C1C', backgroundColor: 'rgba(185,28,28,0.08)', fill: true, tension: 0.3, pointRadius: 3 }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    scales: {
+      x: { grid: { display: false }, ticks: { font: { size: 10 } } },
+      y: { grid: { color: 'rgba(0,0,0,0.05)' }, ticks: { callback: v => '$' + v + 'M' } }
+    }
+  }
+});
+
+// Imp anual (Sección II)
+new Chart(document.getElementById('aut-chartImpAnual'), {
+  type: 'line',
+  data: {
+    labels: years.slice(0,11),
+    datasets: [{ data: imp.slice(0,11), borderColor: '#B91C1C', backgroundColor: 'rgba(185,28,28,0.08)', fill: true, tension: 0.3, pointRadius: 3 }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    scales: {
+      x: { grid: { display: false }, ticks: { font: { size: 10 } } },
+      y: { grid: { color: 'rgba(0,0,0,0.05)' }, ticks: { callback: v => '$' + v + 'M' } }
+    }
+  }
+});
+
+function showProdAut(id, btn) {
+  var scope = btn.closest('.aut');
+  scope.querySelectorAll('.prod-section').forEach(s => s.classList.remove('visible'));
+  scope.querySelectorAll('.prod-tab').forEach(b => b.classList.remove('active'));
+  scope.querySelector('#aut-prod-' + id).classList.add('visible');
+  btn.classList.add('active');
+}
+
+// Nav active on scroll
+const navLinks = document.querySelectorAll('.nav a');
+const sections = document.querySelectorAll('.section');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.id; });
+  navLinks.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + current); });
+});
+</script>
