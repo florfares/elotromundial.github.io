@@ -1,9 +1,8 @@
 <!-- Argentina – Argelia: informe completo -->
-
 <style>
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
-  :root {
+  #content-area {
     --sand: #F5F3FF;
     --sand-dark: #EDE9FE;
     --ink: #1A1916;
@@ -23,25 +22,18 @@
     --mono: 'IBM Plex Mono', monospace;
   }
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  #content-area *, #content-area *::before, #content-area *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  body {
-    font-family: var(--font);
-    background: var(--sand);
-    color: var(--ink);
-    line-height: 1.6;
-    font-size: 15px;
-  }
 
   /* ── HERO ── */
-  .hero {
+  #content-area .hero {
     background: var(--ink);
     color: #fff;
     padding: 80px 48px 64px;
     position: relative;
     overflow: hidden;
   }
-  .hero::before {
+  #content-area .hero::before {
     content: '';
     position: absolute;
     top: -60px; right: -80px;
@@ -50,7 +42,7 @@
     background: rgba(91,33,182,0.18);
     pointer-events: none;
   }
-  .hero-eyebrow {
+  #content-area .hero-eyebrow {
     font-family: var(--mono);
     font-size: 11px;
     letter-spacing: 0.14em;
@@ -58,7 +50,7 @@
     color: rgba(255,255,255,0.5);
     margin-bottom: 20px;
   }
-  .hero h1 {
+  #content-area .hero h1 {
     font-size: clamp(32px, 5vw, 58px);
     font-weight: 300;
     line-height: 1.08;
@@ -67,26 +59,26 @@
     margin-bottom: 24px;
   }
   .hero h1 strong { font-weight: 600; color: #A78BFA; }
-  .hero-sub {
+  #content-area .hero-sub {
     font-size: 16px;
     color: rgba(255,255,255,0.6);
     max-width: 520px;
     line-height: 1.65;
     margin-bottom: 48px;
   }
-  .hero-stats {
+  #content-area .hero-stats {
     display: flex;
     gap: 48px;
     flex-wrap: wrap;
   }
-  .hero-stat-val {
+  #content-area .hero-stat-val {
     font-size: 36px;
     font-weight: 500;
     color: #A78BFA;
     letter-spacing: -0.02em;
     line-height: 1;
   }
-  .hero-stat-label {
+  #content-area .hero-stat-label {
     font-size: 12px;
     color: rgba(255,255,255,0.45);
     margin-top: 4px;
@@ -94,14 +86,14 @@
   }
 
   /* ── NAV ── */
-  .nav {
+  #content-area .nav {
     position: sticky;
     top: 0;
     background: var(--ink);
     z-index: 100;
     border-bottom: 1px solid rgba(255,255,255,0.08);
   }
-  .nav-inner {
+  #content-area .nav-inner {
     display: flex;
     gap: 0;
     max-width: 1100px;
@@ -109,7 +101,7 @@
     padding: 0 48px;
     overflow-x: auto;
   }
-  .nav a {
+  #content-area .nav a {
     display: block;
     padding: 14px 0;
     margin-right: 32px;
@@ -129,7 +121,7 @@
   .section { padding: 72px 0; border-bottom: 1px solid var(--border); }
   .section:last-child { border-bottom: none; }
 
-  .section-eyebrow {
+  #content-area .section-eyebrow {
     font-family: var(--mono);
     font-size: 10px;
     letter-spacing: 0.16em;
@@ -137,14 +129,14 @@
     color: var(--ink-faint);
     margin-bottom: 10px;
   }
-  .section-title {
+  #content-area .section-title {
     font-size: clamp(22px, 3vw, 32px);
     font-weight: 400;
     letter-spacing: -0.015em;
     line-height: 1.15;
     margin-bottom: 8px;
   }
-  .section-lead {
+  #content-area .section-lead {
     font-size: 16px;
     color: var(--ink-muted);
     max-width: 640px;
@@ -153,7 +145,7 @@
   }
 
   /* ── METRIC CARDS ── */
-  .metrics {
+  #content-area .metrics {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 1px;
@@ -163,18 +155,18 @@
     overflow: hidden;
     margin-bottom: 40px;
   }
-  .metric {
+  #content-area .metric {
     background: var(--sand);
     padding: 24px 20px;
   }
-  .metric-val {
+  #content-area .metric-val {
     font-size: 28px;
     font-weight: 500;
     letter-spacing: -0.02em;
     line-height: 1;
     margin-bottom: 6px;
   }
-  .metric-label {
+  #content-area .metric-label {
     font-size: 12px;
     color: var(--ink-faint);
     letter-spacing: 0.03em;
@@ -215,7 +207,7 @@
   .prod-section { display: none; }
   .prod-section.visible { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
 
-  .cat-head {
+  #content-area .cat-head {
     font-family: var(--mono);
     font-size: 10px;
     letter-spacing: 0.12em;
@@ -236,7 +228,7 @@
   .prod-fill { height: 100%; border-radius: 2px; }
   .prod-val { font-size: 11px; color: var(--ink-faint); width: 58px; text-align: right; font-family: var(--mono); flex-shrink: 0; }
   .prod-val.hl { color: var(--ink-muted); font-weight: 500; }
-  .note-box {
+  #content-area .note-box {
     background: var(--sand-dark);
     border-left: 3px solid var(--border-strong);
     border-radius: 0 3px 3px 0;
@@ -249,7 +241,7 @@
 
   /* ── SYNTHESIS ── */
   .synthesis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px; }
-  .synth-card {
+  #content-area .synth-card {
     padding: 28px;
     border: 1px solid var(--border);
     border-radius: 4px;
@@ -259,7 +251,7 @@
   .synth-card-body { font-size: 14px; color: var(--ink-muted); line-height: 1.7; }
 
   /* ── FOOTER ── */
-  .footer {
+  #content-area .footer {
     background: var(--ink);
     color: rgba(255,255,255,0.35);
     text-align: center;
@@ -270,7 +262,7 @@
   }
 
   /* ── CONCLUSIONS ── */
-  .conclusion-block {
+  #content-area .conclusion-block {
     border-left: 3px solid var(--border-strong);
     padding: 20px 24px;
     margin-bottom: 24px;
@@ -286,7 +278,7 @@
   .conclusion-body { font-size: 14px; color: var(--ink-muted); line-height: 1.75; }
   .conclusion-body strong { font-weight: 500; color: var(--ink); }
   .ref-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-top: 32px; }
-  .ref-card {
+  #content-area .ref-card {
     background: var(--sand-dark);
     border: 1px solid var(--border);
     border-radius: 4px;
@@ -299,7 +291,7 @@
   .ref-org { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 6px; }
   .ref-title { font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 4px; line-height: 1.4; }
   .ref-desc { font-size: 12px; color: var(--ink-muted); line-height: 1.5; }
-  .correction-box {
+  #content-area .correction-box {
     background: #FAF5FF;
     border: 1px solid #E8C96A;
     border-radius: 4px;

@@ -1,9 +1,8 @@
 <!-- Argentina – Austria: informe completo -->
-
 <style>
   @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
-  :root {
+  #content-area {
     --sand: #FFF5F5;
     --sand-dark: #FEE2E2;
     --ink: #1A1916;
@@ -23,9 +22,9 @@
     --mono: 'IBM Plex Mono', monospace;
   }
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  #content-area *, #content-area *::before, #content-area *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  .aut-body {
+  #content-area .aut-body {
     font-family: var(--font);
     background: var(--sand);
     color: var(--ink);
@@ -34,14 +33,14 @@
   }
 
   /* ── HERO ── */
-  .hero {
+  #content-area .hero {
     background: var(--ink);
     color: #fff;
     padding: 80px 48px 64px;
     position: relative;
     overflow: hidden;
   }
-  .hero::before {
+  #content-area .hero::before {
     content: '';
     position: absolute;
     top: -60px; right: -80px;
@@ -50,7 +49,7 @@
     background: rgba(185,28,28,0.18);
     pointer-events: none;
   }
-  .hero-eyebrow {
+  #content-area .hero-eyebrow {
     font-family: var(--mono);
     font-size: 11px;
     letter-spacing: 0.14em;
@@ -58,7 +57,7 @@
     color: rgba(255,255,255,0.5);
     margin-bottom: 20px;
   }
-  .hero h1 {
+  #content-area .hero h1 {
     font-size: clamp(32px, 5vw, 58px);
     font-weight: 300;
     line-height: 1.08;
@@ -67,26 +66,26 @@
     margin-bottom: 24px;
   }
   .hero h1 strong { font-weight: 600; color: #FCA5A5; }
-  .hero-sub {
+  #content-area .hero-sub {
     font-size: 16px;
     color: rgba(255,255,255,0.6);
     max-width: 520px;
     line-height: 1.65;
     margin-bottom: 48px;
   }
-  .hero-stats {
+  #content-area .hero-stats {
     display: flex;
     gap: 48px;
     flex-wrap: wrap;
   }
-  .hero-stat-val {
+  #content-area .hero-stat-val {
     font-size: 36px;
     font-weight: 500;
     color: #FCA5A5;
     letter-spacing: -0.02em;
     line-height: 1;
   }
-  .hero-stat-label {
+  #content-area .hero-stat-label {
     font-size: 12px;
     color: rgba(255,255,255,0.45);
     margin-top: 4px;
@@ -94,14 +93,14 @@
   }
 
   /* ── NAV ── */
-  .nav {
+  #content-area .nav {
     position: sticky;
     top: 0;
     background: var(--ink);
     z-index: 100;
     border-bottom: 1px solid rgba(255,255,255,0.08);
   }
-  .nav-inner {
+  #content-area .nav-inner {
     display: flex;
     gap: 0;
     max-width: 1100px;
@@ -109,7 +108,7 @@
     padding: 0 48px;
     overflow-x: auto;
   }
-  .nav a {
+  #content-area .nav a {
     display: block;
     padding: 14px 0;
     margin-right: 32px;
@@ -129,7 +128,7 @@
   .section { padding: 72px 0; border-bottom: 1px solid var(--border); }
   .section:last-child { border-bottom: none; }
 
-  .section-eyebrow {
+  #content-area .section-eyebrow {
     font-family: var(--mono);
     font-size: 10px;
     letter-spacing: 0.16em;
@@ -137,14 +136,14 @@
     color: var(--ink-faint);
     margin-bottom: 10px;
   }
-  .section-title {
+  #content-area .section-title {
     font-size: clamp(22px, 3vw, 32px);
     font-weight: 400;
     letter-spacing: -0.015em;
     line-height: 1.15;
     margin-bottom: 8px;
   }
-  .section-lead {
+  #content-area .section-lead {
     font-size: 16px;
     color: var(--ink-muted);
     max-width: 640px;
@@ -153,7 +152,7 @@
   }
 
   /* ── METRIC CARDS ── */
-  .metrics {
+  #content-area .metrics {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 1px;
@@ -163,18 +162,18 @@
     overflow: hidden;
     margin-bottom: 40px;
   }
-  .metric {
+  #content-area .metric {
     background: var(--sand);
     padding: 24px 20px;
   }
-  .metric-val {
+  #content-area .metric-val {
     font-size: 28px;
     font-weight: 500;
     letter-spacing: -0.02em;
     line-height: 1;
     margin-bottom: 6px;
   }
-  .metric-label {
+  #content-area .metric-label {
     font-size: 12px;
     color: var(--ink-faint);
     letter-spacing: 0.03em;
@@ -215,7 +214,7 @@
 
   /* ── PRODUCT DETAIL ── */
   .prod-tabs { display: flex; gap: 0; margin-bottom: 32px; border-bottom: 1px solid var(--border); }
-  .prod-tab {
+  #content-area .prod-tab {
     background: none; border: none; border-bottom: 2px solid transparent;
     padding: 10px 20px 10px 0; margin-right: 24px; font-size: 13px; font-weight: 500;
     color: var(--ink-muted); cursor: pointer; transition: color 0.15s, border-color 0.15s;
@@ -244,7 +243,7 @@
   .conclusion-body strong { font-weight: 500; color: var(--ink); }
 
   /* ── CORRECTION BOX ── */
-  .correction-box {
+  #content-area .correction-box {
     background: #FFF7ED;
     border: 1px solid #FCD34D;
     border-radius: 4px;
@@ -257,7 +256,7 @@
 
   /* ── REFERENCES ── */
   .ref-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-top: 32px; }
-  .ref-card {
+  #content-area .ref-card {
     background: var(--sand-dark);
     border: 1px solid var(--border);
     border-radius: 4px;
@@ -272,7 +271,7 @@
   .ref-desc { font-size: 12px; color: var(--ink-muted); line-height: 1.5; }
 
   /* ── FOOTER ── */
-  .report-footer {
+  #content-area .report-footer {
     background: var(--ink); color: rgba(255,255,255,0.35);
     font-family: var(--mono); font-size: 11px;
     text-align: center; padding: 24px 48px;
