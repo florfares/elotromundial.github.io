@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>El Otro Mundial · Comercio Bilateral Argentina</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <style>
   :root {
     --navy: #0d1b2a;
@@ -256,19 +257,18 @@ PAISES.forEach((p, i) => {
   nav.appendChild(btn);
 });
 
-// Re-ejecuta todos los <script> presentes en un nodo DOM.
-// innerHTML no ejecuta scripts por seguridad del navegador,
-// así que hay que clonarlos y agregarlos al documento manualmente.
+// Re-ejecuta los <script> inline de un fragmento HTML inyectado con innerHTML.
+// Los scripts externos (src=) se ignoran porque Chart.js ya se cargó en el <head>.
+// El código se envuelve en una función para evitar errores de "const ya declarado"
+// cuando el mismo país se recarga desde el caché.
 function ejecutarScripts(container) {
-  const scripts = container.querySelectorAll('script');
-  scripts.forEach(oldScript => {
+  container.querySelectorAll('script').forEach(oldScript => {
+    if (oldScript.src) return; // ya cargado en el <head>, ignorar
     const newScript = document.createElement('script');
-    // Copiar atributos (src, type, etc.)
-    [...oldScript.attributes].forEach(attr => {
-      newScript.setAttribute(attr.name, attr.value);
-    });
-    newScript.textContent = oldScript.textContent;
-    oldScript.parentNode.replaceChild(newScript, oldScript);
+    // Envolver en IIFE para que const/let no choquen en el scope global
+    newScript.textContent = '(function(){\n' + oldScript.textContent + '\n})();';
+    document.body.appendChild(newScript);
+    oldScript.remove();
   });
 }
 
@@ -284,6 +284,8 @@ async function loadPais(pais, btn) {
   const area = document.getElementById('content-area');
 
   if (cache[pais.id]) {
+    // Destruir gráficos existentes antes de reemplazar el HTML
+    Chart.helpers && Object.values(Chart.instances || {}).forEach(c => c.destroy());
     area.innerHTML = cache[pais.id];
     ejecutarScripts(area);
     return;
