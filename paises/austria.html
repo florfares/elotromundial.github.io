@@ -42,6 +42,7 @@
     padding: 80px 48px 64px;
     position: relative;
     overflow: hidden;
+    isolation: isolate;
   }
   #content-area .hero::before {
     content: '';
@@ -51,8 +52,14 @@
     border-radius: 50%;
     background: rgba(185,28,28,0.18);
     pointer-events: none;
+    z-index: 0;
   }
-  #content-area .hero-eyebrow {
+  #content-area .hero .container {
+    position: relative;
+    z-index: 1;
+  }
+
+    #content-area .hero-eyebrow {
     font-family: var(--mono);
     font-size: 11px;
     letter-spacing: 0.14em;
@@ -68,7 +75,7 @@
     max-width: 680px;
     margin-bottom: 24px;
   }
-  .hero h1 strong { font-weight: 600; color: #FCA5A5; }
+  #content-area .hero h1 strong { font-weight: 600; color: #FCA5A5; }
   #content-area .hero-sub {
     font-size: 16px;
     color: rgba(255,255,255,0.6);
