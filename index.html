@@ -256,6 +256,22 @@ PAISES.forEach((p, i) => {
   nav.appendChild(btn);
 });
 
+// Re-ejecuta todos los <script> presentes en un nodo DOM.
+// innerHTML no ejecuta scripts por seguridad del navegador,
+// así que hay que clonarlos y agregarlos al documento manualmente.
+function ejecutarScripts(container) {
+  const scripts = container.querySelectorAll('script');
+  scripts.forEach(oldScript => {
+    const newScript = document.createElement('script');
+    // Copiar atributos (src, type, etc.)
+    [...oldScript.attributes].forEach(attr => {
+      newScript.setAttribute(attr.name, attr.value);
+    });
+    newScript.textContent = oldScript.textContent;
+    oldScript.parentNode.replaceChild(newScript, oldScript);
+  });
+}
+
 async function loadPais(pais, btn) {
   document.querySelectorAll('.tab-btn').forEach(b => {
     b.classList.remove('active');
@@ -269,6 +285,7 @@ async function loadPais(pais, btn) {
 
   if (cache[pais.id]) {
     area.innerHTML = cache[pais.id];
+    ejecutarScripts(area);
     return;
   }
 
@@ -286,6 +303,7 @@ async function loadPais(pais, btn) {
     const html = await res.text();
     cache[pais.id] = html;
     area.innerHTML = html;
+    ejecutarScripts(area);
   } catch (err) {
     area.innerHTML = `
       <div class="error-msg">
