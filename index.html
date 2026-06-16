@@ -237,7 +237,6 @@
   <a href="https://noticias.unsam.edu.ar/tag/el-otro-mundial/" target="_blank" rel="noopener">El Otro Mundial · EEyN · UNSAM</a> ·
   Junio 2026
 </footer>
-
 <script>
 const PAISES = [
   { id: 'argelia',  label: 'Argentina – Argelia',  flags: '🇦🇷🇩🇿' },
@@ -258,11 +257,21 @@ PAISES.forEach((p, i) => {
   nav.appendChild(btn);
 });
 
-// Re-ejecuta los <script> inline de un fragmento HTML inyectado con innerHTML.
-// Los scripts externos (src=) se ignoran porque Chart.js ya se cargó en el <head>.
-// El código se envuelve en una función para evitar errores de "const ya declarado"
-// cuando el mismo país se recarga desde el caché.
+// Re-ejecuta los <script> inline y mueve los <style> al <head>
+// cuando un fragmento HTML es inyectado con innerHTML (que los ignora por defecto).
 function ejecutarScripts(container) {
+  // Mover <style> al <head> para que el navegador los aplique
+  container.querySelectorAll('style').forEach(oldStyle => {
+    const id = 'pais-style-' + oldStyle.textContent.trim().slice(0, 30).replace(/\W/g, '');
+    const existing = document.getElementById(id);
+    if (existing) existing.remove();
+    const newStyle = document.createElement('style');
+    newStyle.id = id;
+    newStyle.textContent = oldStyle.textContent;
+    document.head.appendChild(newStyle);
+    oldStyle.remove();
+  });
+  // Re-ejecutar <script> inline
   container.querySelectorAll('script').forEach(oldScript => {
     if (oldScript.src) return; // ya cargado en el <head>, ignorar
     const newScript = document.createElement('script');
