@@ -26,27 +26,18 @@
 
   /* ── HERO ── */
   .dzb .hero {
-    background: var(--ink);
-    color: #3B0764;
+    color: var(--ink);
     padding: 80px 48px 64px;
     position: relative;
     overflow: hidden;
   }
-  .dzb .hero::before {
-    content: '';
-    position: absolute;
-    top: -60px; right: -80px;
-    width: 420px; height: 420px;
-    border-radius: 50%;
-    background: rgba(91,33,182,0.18);
-    pointer-events: none;
-  }
+  .dzb .hero::before { content: none; }
   .dzb .hero-eyebrow {
     font-family: var(--mono);
     font-size: 11px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: #3B0764;
+    color: var(--ink-faint);
     margin-bottom: 20px;
   }
   .dzb .hero h1 {
@@ -57,10 +48,10 @@
     max-width: 680px;
     margin-bottom: 24px;
   }
-  .dzb .hero h1 strong { font-weight: 600; color: #A78BFA; }
+  .dzb .hero h1 strong { font-weight: 600; color: var(--teal); }
   .dzb .hero-sub {
     font-size: 16px;
-    color: #3B0764;
+    color: var(--ink-muted);
     max-width: 520px;
     line-height: 1.65;
     margin-bottom: 48px;
@@ -73,13 +64,13 @@
   .dzb .hero-stat-val {
     font-size: 36px;
     font-weight: 500;
-    color: #A78BFA;
+    color: var(--teal);
     letter-spacing: -0.02em;
     line-height: 1;
   }
   .dzb .hero-stat-label {
     font-size: 12px;
-    color: #3B0764;
+    color: var(--ink-muted);
     margin-top: 4px;
     letter-spacing: 0.04em;
   }
@@ -88,9 +79,9 @@
   .dzb .nav {
     position: sticky;
     top: 0;
-    background: var(--ink);
+    background: var(--sand);
     z-index: 100;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid var(--border);
   }
   .dzb .nav-inner {
     display: flex;
@@ -105,15 +96,15 @@
     padding: 14px 0;
     margin-right: 32px;
     font-size: 13px;
-    color: #3B0764;
+    color: var(--ink-muted);
     text-decoration: none;
     border-bottom: 2px solid transparent;
     white-space: nowrap;
     transition: color 0.15s, border-color 0.15s;
     letter-spacing: 0.02em;
   }
-  .dzb .nav a:hover { color: #3B0764; }
-  .dzb .nav a.active { color: #A78BFA; border-bottom-color: #A78BFA; }
+  .dzb .nav a:hover { color: var(--ink); }
+  .dzb .nav a.active { color: var(--teal); border-bottom-color: var(--teal); }
 
   /* ── LAYOUT ── */
   .dzb .container { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
