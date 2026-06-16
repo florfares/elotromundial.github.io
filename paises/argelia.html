@@ -552,8 +552,8 @@
     <p class="section-lead">Desglose a nivel de partida arancelaria HS de los principales bienes intercambiados, acumulado 2014–2025 para exportaciones y 2018–2025 para importaciones reportadas por Argentina.</p>
 
     <div class="prod-tabs">
-      <button class="prod-tab active" onclick="showProd('exp', this)">Argentina exporta a Argelia</button>
-      <button class="prod-tab" onclick="showProd('imp', this)">Argentina importa de Argelia</button>
+      <button class="prod-tab active" onclick="showProd('exp', this)">🇦🇷 Argentina exporta a Argelia</button>
+      <button class="prod-tab" onclick="showProd('imp', this)">🇩🇿 Argentina importa de Argelia</button>
     </div>
 
     <!-- EXPORTS -->
@@ -882,7 +882,7 @@ new Chart(document.getElementById('chartShareDza'), {
 
 // ── PRODUCT TABS ──
 function showProd(id, btn) {
-  var scope = document.querySelector('.dzb');
+  var scope = btn.closest('.dzb');
   scope.querySelectorAll('.prod-section').forEach(s => s.classList.remove('visible'));
   scope.querySelectorAll('.prod-tab').forEach(b => b.classList.remove('active'));
   scope.querySelector('#prod-' + id).classList.add('visible');
