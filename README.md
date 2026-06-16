@@ -1,4 +1,4 @@
-# elotromundial.github.io
+# El Otro Mundial 2026 en la EEyN - UNSAM 
 Proyecto de la Licenciatura en Economia de la EEyN-UNSAM. 
 Equipo: Balbina Griffa, Florencia Fares y Quimey Ramos Veliz.
 
