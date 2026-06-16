@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Otro Mundial · Comercio Bilateral Argentina</title>
+<style>
+  :root {
+    --navy: #0d1b2a;
+    --navy-mid: #1a2e44;
+    --accent: #2563eb;
+    --text: #1e293b;
+    --text-muted: #64748b;
+    --bg: #f8fafc;
+    --border: #e2e8f0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* MASTHEAD */
+  .masthead {
+    background: var(--navy);
+    border-bottom: 3px solid var(--accent);
+  }
+
+  .masthead-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 2rem 1.5rem;
+  }
+
+  .masthead-eyebrow {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #93c5fd;
+    margin-bottom: 0.5rem;
+  }
+
+  .masthead-title {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 400;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 0.6rem;
+  }
+
+  .masthead-title strong { color: #60a5fa; }
+
+  .masthead-subtitle {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 14px;
+    color: #94a3b8;
+    max-width: 640px;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  /* TAB NAVIGATION */
+  .tab-nav-wrap {
+    background: var(--navy-mid);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .tab-nav-wrap::-webkit-scrollbar { display: none; }
+
+  .tab-nav {
+    display: flex;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    min-width: max-content;
+  }
+
+  .tab-btn {
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    padding: 0.85rem 1.2rem;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #94a3b8;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color 0.15s, border-color 0.15s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .tab-btn:hover { color: #e2e8f0; }
+  .tab-btn.active { color: #ffffff; border-bottom-color: #60a5fa; }
+  .tab-flag { font-size: 16px; line-height: 1; }
+
+  /* CONTENT AREA */
+  #content-area {
+    min-height: 60vh;
+  }
+
+  /* Loading state */
+  .loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 2rem;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 14px;
+    color: var(--text-muted);
+    gap: 10px;
+  }
+
+  .loading-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 1.2s ease-in-out infinite;
+  }
+  .loading-dot:nth-child(2) { animation-delay: 0.2s; }
+  .loading-dot:nth-child(3) { animation-delay: 0.4s; }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.3; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1); }
+  }
+
+  /* Error state */
+  .error-msg {
+    max-width: 500px;
+    margin: 4rem auto;
+    padding: 1.5rem;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 14px;
+    color: #991b1b;
+    text-align: center;
+  }
+
+  /* Footer */
+  footer {
+    background: var(--navy);
+    color: #64748b;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 4rem;
+  }
+  footer a { color: #93c5fd; text-decoration: none; }
+
+  @media (max-width: 640px) {
+    .masthead-inner { padding: 1.5rem 1rem 1rem; }
+    .tab-nav { padding: 0 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <p class="masthead-eyebrow">Informe de Comercio Exterior · Junio 2026</p>
+    <h1 class="masthead-title">El Otro <strong>Mundial</strong></h1>
+    <p class="masthead-subtitle">Comercio bilateral de Argentina con sus socios del mundo. Análisis del intercambio, la relevancia relativa y el detalle de productos. Datos: UN Comtrade, 2014–2025.</p>
+  </div>
+
+  <nav class="tab-nav-wrap" role="tablist" aria-label="Seleccionar par bilateral">
+    <div class="tab-nav" id="tab-nav">
+      <!-- Las solapas se generan automáticamente desde PAISES -->
+    </div>
+  </nav>
+</header>
+
+<main id="content-area">
+  <div class="loading">
+    <div class="loading-dot"></div>
+    <div class="loading-dot"></div>
+    <div class="loading-dot"></div>
+    <span>Cargando...</span>
+  </div>
+</main>
+
+<footer>
+  Fuente de datos: UN Comtrade · FAO · OMC · BCR · Metodología FOB ·
+  Análisis elaborado con <a href="https://claude.ai">Claude (Anthropic)</a> · Junio 2026
+</footer>
+
+<script>
+/*
+  PAISES: el único lugar del index que hay que editar cuando se agrega un país.
+  Cada entrada tiene:
+    - id:     nombre del archivo en /paises/  (sin .html)
+    - label:  texto de la solapa
+    - flags:  emojis de banderas
+*/
+const PAISES = [
+  { id: 'argelia', label: 'Argentina – Argelia', flags: '🇦🇷🇩🇿' },
+  { id: 'brasil',  label: 'Argentina – Brasil',  flags: '🇦🇷🇧🇷' },
+  { id: 'china',   label: 'Argentina – China',   flags: '🇦🇷🇨🇳' },
+  { id: 'eeuu',    label: 'Argentina – EE.UU.',  flags: '🇦🇷🇺🇸' },
+  { id: 'chile',   label: 'Argentina – Chile',   flags: '🇦🇷🇨🇱' },
+  { id: 'india',   label: 'Argentina – India',   flags: '🇦🇷🇮🇳' },
+];
+
+// Cache para no volver a fetchear lo ya cargado
+const cache = {};
+
+// Construir solapas
+const nav = document.getElementById('tab-nav');
+PAISES.forEach((p, i) => {
+  const btn = document.createElement('button');
+  btn.className = 'tab-btn' + (i === 0 ? ' active' : '');
+  btn.setAttribute('role', 'tab');
+  btn.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+  btn.innerHTML = `<span class="tab-flag">${p.flags}</span> ${p.label}`;
+  btn.addEventListener('click', () => loadPais(p, btn));
+  nav.appendChild(btn);
+});
+
+// Cargar contenido de un país
+async function loadPais(pais, btn) {
+  // Activar solapa
+  document.querySelectorAll('.tab-btn').forEach(b => {
+    b.classList.remove('active');
+    b.setAttribute('aria-selected', 'false');
+  });
+  btn.classList.add('active');
+  btn.setAttribute('aria-selected', 'true');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  const area = document.getElementById('content-area');
+
+  // Si ya está en cache, mostrar directo
+  if (cache[pais.id]) {
+    area.innerHTML = cache[pais.id];
+    return;
+  }
+
+  // Mostrar loading
+  area.innerHTML = `
+    <div class="loading">
+      <div class="loading-dot"></div>
+      <div class="loading-dot"></div>
+      <div class="loading-dot"></div>
+      <span>Cargando ${pais.label}...</span>
+    </div>`;
+
+  try {
+    const res = await fetch(`paises/${pais.id}.html`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const html = await res.text();
+    cache[pais.id] = html;
+    area.innerHTML = html;
+  } catch (err) {
+    area.innerHTML = `
+      <div class="error-msg">
+        No se pudo cargar <strong>paises/${pais.id}.html</strong>.<br>
+        Verificá que el archivo exista en el repositorio.
+      </div>`;
+  }
+}
+
+// Cargar el primero al inicio
+loadPais(PAISES[0], nav.querySelector('.tab-btn'));
+</script>
+</body>
+</html>
