@@ -1,8 +1,14 @@
 <!-- Argentina – Argelia: informe completo -->
 <style>
+
   400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
-  #content-area {
+  .dzb {
+    background: #F5F3FF;
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    color: #1A1916;
+    line-height: 1.6;
+    font-size: 15px;
     --sand: #F5F3FF;
     background: #F5F3FF;
     font-family: 'IBM Plex Sans', system-ui, sans-serif;
@@ -29,7 +35,7 @@
 
 
   /* ── HERO ── */
-  #content-area .hero {
+  .dzb #content-area .hero {
     background: var(--ink);
     color: #fff;
     padding: 80px 48px 64px;
@@ -37,7 +43,7 @@
     overflow: hidden;
     isolation: isolate;
   }
-  #content-area .hero::before {
+  .dzb #content-area .hero::before {
     content: '';
     position: absolute;
     top: -60px; right: -80px;
@@ -47,12 +53,12 @@
     pointer-events: none;
     z-index: 0;
   }
-  #content-area .hero .container {
+  .dzb #content-area .hero .container {
     position: relative;
     z-index: 1;
   }
 
-    #content-area .hero-eyebrow {
+    .dzb #content-area .hero-eyebrow {
     font-family: var(--mono);
     font-size: 11px;
     letter-spacing: 0.14em;
@@ -60,7 +66,7 @@
     color: rgba(255,255,255,0.5);
     margin-bottom: 20px;
   }
-  #content-area .hero h1 {
+  .dzb #content-area .hero h1 {
     font-size: clamp(32px, 5vw, 58px);
     font-weight: 300;
     line-height: 1.08;
@@ -69,26 +75,26 @@
     margin-bottom: 24px;
   }
   #content-area .hero h1 strong { font-weight: 600; color: #A78BFA; }
-  #content-area .hero-sub {
+  .dzb #content-area .hero-sub {
     font-size: 16px;
     color: rgba(255,255,255,0.6);
     max-width: 520px;
     line-height: 1.65;
     margin-bottom: 48px;
   }
-  #content-area .hero-stats {
+  .dzb #content-area .hero-stats {
     display: flex;
     gap: 48px;
     flex-wrap: wrap;
   }
-  #content-area .hero-stat-val {
+  .dzb #content-area .hero-stat-val {
     font-size: 36px;
     font-weight: 500;
     color: #A78BFA;
     letter-spacing: -0.02em;
     line-height: 1;
   }
-  #content-area .hero-stat-label {
+  .dzb #content-area .hero-stat-label {
     font-size: 12px;
     color: rgba(255,255,255,0.45);
     margin-top: 4px;
@@ -96,14 +102,14 @@
   }
 
   /* ── NAV ── */
-  #content-area .nav {
+  .dzb #content-area .nav {
     position: sticky;
     top: 0;
     background: var(--ink);
     z-index: 100;
     border-bottom: 1px solid rgba(255,255,255,0.08);
   }
-  #content-area .nav-inner {
+  .dzb #content-area .nav-inner {
     display: flex;
     gap: 0;
     max-width: 1100px;
@@ -111,7 +117,7 @@
     padding: 0 48px;
     overflow-x: auto;
   }
-  #content-area .nav a {
+  .dzb #content-area .nav a {
     display: block;
     padding: 14px 0;
     margin-right: 32px;
@@ -131,7 +137,7 @@
   .section { padding: 72px 0; border-bottom: 1px solid var(--border); }
   .section:last-child { border-bottom: none; }
 
-  #content-area .section-eyebrow {
+  .dzb #content-area .section-eyebrow {
     font-family: var(--mono);
     font-size: 10px;
     letter-spacing: 0.16em;
@@ -139,14 +145,14 @@
     color: var(--ink-faint);
     margin-bottom: 10px;
   }
-  #content-area .section-title {
+  .dzb #content-area .section-title {
     font-size: clamp(22px, 3vw, 32px);
     font-weight: 400;
     letter-spacing: -0.015em;
     line-height: 1.15;
     margin-bottom: 8px;
   }
-  #content-area .section-lead {
+  .dzb #content-area .section-lead {
     font-size: 16px;
     color: var(--ink-muted);
     max-width: 640px;
@@ -155,7 +161,7 @@
   }
 
   /* ── METRIC CARDS ── */
-  #content-area .metrics {
+  .dzb #content-area .metrics {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 1px;
@@ -165,18 +171,18 @@
     overflow: hidden;
     margin-bottom: 40px;
   }
-  #content-area .metric {
+  .dzb #content-area .metric {
     background: var(--sand);
     padding: 24px 20px;
   }
-  #content-area .metric-val {
+  .dzb #content-area .metric-val {
     font-size: 28px;
     font-weight: 500;
     letter-spacing: -0.02em;
     line-height: 1;
     margin-bottom: 6px;
   }
-  #content-area .metric-label {
+  .dzb #content-area .metric-label {
     font-size: 12px;
     color: var(--ink-faint);
     letter-spacing: 0.03em;
@@ -217,7 +223,7 @@
   .prod-section { display: none; }
   .prod-section.visible { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
 
-  #content-area .cat-head {
+  .dzb #content-area .cat-head {
     font-family: var(--mono);
     font-size: 10px;
     letter-spacing: 0.12em;
@@ -238,7 +244,7 @@
   .prod-fill { height: 100%; border-radius: 2px; }
   .prod-val { font-size: 11px; color: var(--ink-faint); width: 58px; text-align: right; font-family: var(--mono); flex-shrink: 0; }
   .prod-val.hl { color: var(--ink-muted); font-weight: 500; }
-  #content-area .note-box {
+  .dzb #content-area .note-box {
     background: var(--sand-dark);
     border-left: 3px solid var(--border-strong);
     border-radius: 0 3px 3px 0;
@@ -251,7 +257,7 @@
 
   /* ── SYNTHESIS ── */
   .synthesis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px; }
-  #content-area .synth-card {
+  .dzb #content-area .synth-card {
     padding: 28px;
     border: 1px solid var(--border);
     border-radius: 4px;
@@ -261,7 +267,7 @@
   .synth-card-body { font-size: 14px; color: var(--ink-muted); line-height: 1.7; }
 
   /* ── FOOTER ── */
-  #content-area .footer {
+  .dzb #content-area .footer {
     background: var(--ink);
     color: rgba(255,255,255,0.35);
     text-align: center;
@@ -272,7 +278,7 @@
   }
 
   /* ── CONCLUSIONS ── */
-  #content-area .conclusion-block {
+  .dzb #content-area .conclusion-block {
     border-left: 3px solid var(--border-strong);
     padding: 20px 24px;
     margin-bottom: 24px;
@@ -288,7 +294,7 @@
   .conclusion-body { font-size: 14px; color: var(--ink-muted); line-height: 1.75; }
   .conclusion-body strong { font-weight: 500; color: var(--ink); }
   .ref-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-top: 32px; }
-  #content-area .ref-card {
+  .dzb #content-area .ref-card {
     background: var(--sand-dark);
     border: 1px solid var(--border);
     border-radius: 4px;
@@ -301,7 +307,7 @@
   .ref-org { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 6px; }
   .ref-title { font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 4px; line-height: 1.4; }
   .ref-desc { font-size: 12px; color: var(--ink-muted); line-height: 1.5; }
-  #content-area .correction-box {
+  .dzb #content-area .correction-box {
     background: #FAF5FF;
     border: 1px solid #E8C96A;
     border-radius: 4px;
@@ -321,7 +327,9 @@
     .nav-inner { padding: 0 20px; }
     .metrics { grid-template-columns: 1fr 1fr; }
   }
+
 </style>
+<div class="dzb">
 <!-- HERO -->
 <header class="hero">
   <div class="container">
@@ -754,6 +762,7 @@
 <footer class="footer">
   Fuente de datos: UN Comtrade · FAO GIEWS · OMC · BCR · Metodología FOB · Análisis y visualización elaborados con Claude (Anthropic) · Junio 2026
 </footer>
+</div>
 
 <script>
 // ── SCROLL SPY ──
