@@ -3,6 +3,8 @@
 
 
 
+
+
   400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
   {
@@ -284,11 +286,22 @@
     .metrics { grid-template-columns: 1fr 1fr; }
   }
 
+  /* ── Links globales ── */
+  .aut a { color: #4C0519; text-decoration: none; }
+  .aut a:hover { color: #881337; text-decoration: underline; }
 
+  /* Links dentro de ref-card heredan el color del card */
+  .aut .ref-card { color: #4C0519; text-decoration: none; }
+  .aut .ref-card .ref-title { color: #4C0519; }
+  .aut .ref-card .ref-desc { color: #4C0519; opacity: 0.75; }
+  .aut .ref-card:hover .ref-title { color: #881337; }
+
+  /* Links dentro de conclusiones (em > a) */
+  .aut em a { color: #4C0519; }
+  .aut em a:hover { color: #881337; }
 
 </style>
 <div class="aut">
-<div class="aut-body">
 
 <!-- HERO -->
 <header class="hero">
@@ -699,7 +712,6 @@
   Fuente de datos: UN Comtrade · Statistics Austria · OMC · Comisión Europea · Metodología FOB · Análisis elaborado con Claude (Anthropic) · Junio 2026
 </div>
 
-</div><!-- /.aut-body -->
 </div>
 
 <script>

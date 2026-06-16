@@ -3,6 +3,7 @@
 
 
 
+
   400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
   {
@@ -313,7 +314,19 @@
     .metrics { grid-template-columns: 1fr 1fr; }
   }
 
+  /* ── Links globales ── */
+  .dzb a { color: #3B0764; text-decoration: none; }
+  .dzb a:hover { color: #5B21B6; text-decoration: underline; }
 
+  /* Links dentro de ref-card heredan el color del card */
+  .dzb .ref-card { color: #3B0764; text-decoration: none; }
+  .dzb .ref-card .ref-title { color: #3B0764; }
+  .dzb .ref-card .ref-desc { color: #3B0764; opacity: 0.75; }
+  .dzb .ref-card:hover .ref-title { color: #5B21B6; }
+
+  /* Links dentro de conclusiones (em > a) */
+  .dzb em a { color: #3B0764; }
+  .dzb em a:hover { color: #5B21B6; }
 
 </style>
 <div class="dzb">
