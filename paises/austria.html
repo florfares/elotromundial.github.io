@@ -824,13 +824,13 @@ new Chart(document.getElementById('aut-chartImpAnual'), {
   }
 });
 
-function showProdAut(id, btn) {
+window.showProdAut = function(id, btn) {
   var scope = btn.closest('.aut');
   scope.querySelectorAll('.prod-section').forEach(s => s.classList.remove('visible'));
   scope.querySelectorAll('.prod-tab').forEach(b => b.classList.remove('active'));
   scope.querySelector('#aut-prod-' + id).classList.add('visible');
   btn.classList.add('active');
-}
+};
 
 // Nav active on scroll
 const navLinks = document.querySelectorAll('.nav a');

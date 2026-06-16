@@ -879,11 +879,11 @@ new Chart(document.getElementById('chartShareDza'), {
 });
 
 // ── PRODUCT TABS ──
-function showProd(id, btn) {
+window.showProd = function(id, btn) {
   var scope = btn.closest('.dzb');
   scope.querySelectorAll('.prod-section').forEach(s => s.classList.remove('visible'));
   scope.querySelectorAll('.prod-tab').forEach(b => b.classList.remove('active'));
   scope.querySelector('#prod-' + id).classList.add('visible');
   btn.classList.add('active');
-}
+};
 </script>
