@@ -1,0 +1,97 @@
+<link rel="stylesheet" href="paises/shared.css">
+
+<div class="page-content">
+
+  <div class="pair-header">
+    <p class="pair-label">Comercio bilateral</p>
+    <h2 class="pair-title"><span class="flags">🇦🇷🇩🇿</span> Argentina – Argelia</h2>
+    <p class="pair-desc">Relación marcadamente asimétrica: Argentina exporta alimentos y agroinsumos; Argelia responde con fertilizantes, energía y, puntualmente, vacunas. Serie histórica 2014–2025. Datos: UN Comtrade.</p>
+  </div>
+
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="hero-stat-value">$15,9 MM</div><div class="hero-stat-label">Exportaciones ARG → DZA acumuladas</div></div>
+    <div class="hero-stat"><div class="hero-stat-value">$925 M</div><div class="hero-stat-label">Importaciones DZA → ARG acumuladas</div></div>
+    <div class="hero-stat"><div class="hero-stat-value">17:1</div><div class="hero-stat-label">Ratio de asimetría comercial</div></div>
+    <div class="hero-stat"><div class="hero-stat-value">12 años</div><div class="hero-stat-label">Serie histórica analizada</div></div>
+  </div>
+
+  <!-- Sección I -->
+  <div class="section-block">
+    <p class="section-eyebrow">Sección I</p>
+    <h3 class="section-title">El intercambio bilateral</h3>
+    <p class="section-lead">El superávit acumulado a favor de Argentina supera los $14,9 mil millones. La relación es complementaria: Argentina abastece alimentos; Argelia provee energía y fertilizantes nitrogenados.</p>
+
+    <div class="data-grid">
+      <div class="data-card"><div class="data-card-label">Exportaciones ARG → DZA</div><div class="data-card-value">$15,9 MM</div><div class="data-card-sub">2014–2025</div></div>
+      <div class="data-card"><div class="data-card-label">Importaciones DZA → ARG</div><div class="data-card-value">$925 M</div><div class="data-card-sub">2014–2025</div></div>
+      <div class="data-card"><div class="data-card-label">Superávit comercial Argentina</div><div class="data-card-value">+$14,9 MM</div><div class="data-card-sub"><span class="surplus-badge">Favorable a Argentina</span></div></div>
+      <div class="data-card"><div class="data-card-label">Promedio anual exportado</div><div class="data-card-value">$1,32 MM</div><div class="data-card-sub">a Argelia por año</div></div>
+    </div>
+
+    <p class="sub-heading">Composición exportaciones ARG → DZA</p>
+    <div class="bar-chart">
+      <div class="bar-row"><div class="bar-label">Cereales</div><div class="bar-track"><div class="bar-fill bar-fill-arg" style="width:48.5%"></div></div><div class="bar-amount">$7,8 MM · 48,5%</div></div>
+      <div class="bar-row"><div class="bar-label">Complejo soja</div><div class="bar-track"><div class="bar-fill bar-fill-arg" style="width:27.5%"></div></div><div class="bar-amount">$4,4 MM · 27,5%</div></div>
+      <div class="bar-row"><div class="bar-label">Lácteos</div><div class="bar-track"><div class="bar-fill bar-fill-arg" style="width:13.8%"></div></div><div class="bar-amount">$2,2 MM · 13,8%</div></div>
+      <div class="bar-row"><div class="bar-label">Legumbres</div><div class="bar-track"><div class="bar-fill bar-fill-arg" style="width:3.3%"></div></div><div class="bar-amount">$522 M · 3,3%</div></div>
+      <div class="bar-row"><div class="bar-label">Otros</div><div class="bar-track"><div class="bar-fill bar-fill-arg" style="width:7%"></div></div><div class="bar-amount">$1,1 MM · 7%</div></div>
+    </div>
+  </div>
+
+  <!-- Sección II -->
+  <div class="section-block">
+    <p class="section-eyebrow">Sección II</p>
+    <h3 class="section-title">Relevancia relativa</h3>
+    <p class="section-lead">Argelia es un destino significativo pero no crítico para Buenos Aires. Para Argel, Argentina figura entre los proveedores mundiales n.° 8–11, siendo su principal abastecedor de alimentos.</p>
+
+    <div class="data-grid">
+      <div class="data-card"><div class="data-card-label">Ranking Argelia como destino ARG</div><div class="data-card-value">#6–20°</div><div class="data-card-sub">oscila según cosecha anual</div></div>
+      <div class="data-card"><div class="data-card-label">Share ARG en importaciones DZA</div><div class="data-card-value">2,4–3,3%</div><div class="data-card-sub">comparable a Canadá o Rusia</div></div>
+      <div class="data-card"><div class="data-card-label">Ranking ARG como proveedor DZA</div><div class="data-card-value">#8–11°</div><div class="data-card-sub">proveedor consistente y relevante</div></div>
+    </div>
+  </div>
+
+  <!-- Sección III -->
+  <div class="section-block">
+    <p class="section-eyebrow">Sección III</p>
+    <h3 class="section-title">Detalle de productos</h3>
+    <p class="section-lead">Principales bienes intercambiados a nivel de partida arancelaria HS, acumulado 2014–2025.</p>
+
+    <p class="sub-heading">🇦🇷 Argentina exporta a Argelia</p>
+    <div class="product-row"><div><div class="product-name">🌽 Maíz (no semilla)</div><div class="product-desc">Uno de los 3–5 principales exportadores mundiales. Argelia importa 5–8 MM de toneladas anuales para su industria molinera y alimentaria.</div></div><div><div class="product-value">$6,8 MM</div><div class="product-share">42,6%</div></div></div>
+    <div class="product-row"><div><div class="product-name">🫘 Pellets / expellers de soja</div><div class="product-desc">Proteína vegetal para ganadería avícola y porcina argelina. Argentina es el mayor exportador mundial de harina de soja.</div></div><div><div class="product-value">$3,6 MM</div><div class="product-share">22,5%</div></div></div>
+    <div class="product-row"><div><div class="product-name">🥛 Leche en polvo entera</div><div class="product-desc">Argelia es el mayor importador individual de leche en polvo argentina. El crecimiento fue marcado desde 2021: pasó de ~$75 M a $323 M en 2025.</div></div><div><div class="product-value">$2,1 MM</div><div class="product-share">13,1%</div></div></div>
+    <div class="product-row"><div><div class="product-name">🌾 Trigo (no duro, no semilla)</div><div class="product-desc">Componente crítico de la dieta argelina. El 60% del aporte calórico de la población es trigo.</div></div><div><div class="product-value">$927 M</div><div class="product-share">5,8%</div></div></div>
+    <div class="product-row"><div><div class="product-name">🫘 Aceite de soja crudo</div><div class="product-desc">Argentina es el mayor exportador mundial de aceite de soja. Argelia lo usa en su industria alimentaria.</div></div><div><div class="product-value">$805 M</div><div class="product-share">5,0%</div></div></div>
+
+    <p class="sub-heading" style="margin-top:2rem">🇩🇿 Argentina importa de Argelia</p>
+    <div class="product-row"><div><div class="product-name">🧪 Urea (fertilizante nitrogenado)</div><div class="product-desc">Argelia produce urea como subproducto de su enorme reserva de gas natural. Argentina la usa en maíz, trigo y soja.</div></div><div><div class="product-value">$479 M</div><div class="product-share">51,4%</div></div></div>
+    <div class="product-row"><div><div class="product-name">⛽ Gas natural licuado (GNL)</div><div class="product-desc">En años de déficit energético: 2018, 2020, 2022, 2023. Ausente en 2025 gracias al auge de Vaca Muerta.</div></div><div><div class="product-value">$162 M</div><div class="product-share">16,4%</div></div></div>
+    <div class="product-row"><div><div class="product-name">💉 Vacunas (Sputnik V)</div><div class="product-desc">Concentrado casi totalmente en 2021. Intermediadas a través de Argelia durante la pandemia de COVID-19.</div></div><div><div class="product-value">$93 M</div><div class="product-share">9,4%</div></div></div>
+  </div>
+
+  <!-- Sección IV -->
+  <div class="section-block">
+    <p class="section-eyebrow">Sección IV</p>
+    <h3 class="section-title">Comentarios finales</h3>
+
+    <div class="conclusion">
+      <div class="conclusion-num">1 · Asimetría funcional</div>
+      <div class="conclusion-title">Una relación asimétrica pero mutuamente complementaria</div>
+      <div class="conclusion-text">El comercio bilateral es profundamente asimétrico en volumen ($15,9 MM vs. $925 M) pero funcionalmente complementario: cada país provee al otro exactamente lo que no puede producir en cantidad suficiente. El superávit estructural de Argentina refleja esa asimetría productiva, no una negociación desfavorable para ninguna de las partes.</div>
+    </div>
+
+    <div class="conclusion">
+      <div class="conclusion-num">2 · La ironía circular</div>
+      <div class="conclusion-title">Argentina le vende los granos a Argelia y le compra el fertilizante para producirlos</div>
+      <div class="conclusion-text">Argelia vende urea a Argentina —subproducto de su gas natural— con la cual Argentina fertiliza los campos que producen los cereales y la soja que luego le exporta a Argelia. Es una de las interdependencias comerciales más paradójicas del comercio bilateral argentino.</div>
+    </div>
+
+    <div class="conclusion">
+      <div class="conclusion-num">3 · Dependencia estructural argelina</div>
+      <div class="conclusion-title">La seguridad alimentaria argelina depende en un 70% de las importaciones de cereales</div>
+      <div class="conclusion-text">La FAO documenta que Argelia consume 11 millones de toneladas anuales de trigo produciendo solo 3 millones. En maíz, Argentina y Brasil explican el 87% de los envíos a Argelia. En lácteos, Argelia absorbe aproximadamente el 73% de las exportaciones argentinas de leche en polvo.</div>
+    </div>
+  </div>
+
+</div>
