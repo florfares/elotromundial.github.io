@@ -80,14 +80,10 @@
   /* ── NAV ── */
   .aut .nav {
     position: sticky;
-    top: var(--site-header-h, 0px);
+    top: 0; /* JS lo ajusta dinámicamente en updateNavTop() */
     background: var(--sand);
     z-index: 100;
     border-bottom: 1px solid var(--border);
-  }
-  /* Compensar header del sitio + nav interno al hacer scroll a anclas */
-  .aut .section {
-    scroll-margin-top: calc(var(--site-header-h, 0px) + 48px);
   }
   .aut .nav-inner {
     display: flex;
@@ -824,24 +820,36 @@ window.showProdAut = function(id, btn) {
   btn.classList.add('active');
 };;
 
-// Medir la altura real del header del sitio (masthead + tab-nav-wrap)
-// y exponerla como variable CSS para que el nav interno sepa dónde pegarse.
-function setHeaderOffset() {
+// Nav sticky: se pega debajo del header del sitio mientras es visible,
+// y al tope (top:0) cuando el header ya salió del viewport.
+(function() {
   const siteHeader = document.querySelector('header');
-  const h = siteHeader ? siteHeader.getBoundingClientRect().bottom : 0;
-  document.documentElement.style.setProperty('--site-header-h', Math.round(h) + 'px');
-}
-setHeaderOffset();
-window.addEventListener('resize', setHeaderOffset);
+  const autNav = document.querySelector('.aut .nav');
 
-// Nav active on scroll
-const navLinks = document.querySelectorAll('.aut .nav a');
-const sections = document.querySelectorAll('.aut .section');
-const siteHeaderEl = document.querySelector('header');
-window.addEventListener('scroll', () => {
-  const offset = siteHeaderEl ? siteHeaderEl.getBoundingClientRect().bottom + 8 : 80;
-  let current = '';
-  sections.forEach(s => { if (window.scrollY >= s.offsetTop - offset) current = s.id; });
-  navLinks.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + current); });
-});
+  function updateNavTop() {
+    if (!siteHeader || !autNav) return;
+    const headerBottom = siteHeader.getBoundingClientRect().bottom;
+    const top = Math.max(0, headerBottom);
+    autNav.style.top = top + 'px';
+    // Actualizar scroll-margin-top de las secciones dinámicamente
+    const navH = autNav.offsetHeight;
+    document.querySelectorAll('.aut .section').forEach(s => {
+      s.style.scrollMarginTop = (top + navH + 8) + 'px';
+    });
+  }
+
+  updateNavTop();
+  window.addEventListener('scroll', updateNavTop, { passive: true });
+  window.addEventListener('resize', updateNavTop, { passive: true });
+
+  // Nav active highlight on scroll
+  const navLinks = document.querySelectorAll('.aut .nav a');
+  const sections = document.querySelectorAll('.aut .section');
+  window.addEventListener('scroll', () => {
+    const navBottom = autNav ? autNav.getBoundingClientRect().bottom + 8 : 80;
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - navBottom) current = s.id; });
+    navLinks.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + current); });
+  }, { passive: true });
+})();
 </script>
