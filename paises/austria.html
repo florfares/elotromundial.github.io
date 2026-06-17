@@ -21,14 +21,15 @@
     --border-strong: rgba(26,25,22,0.22);
     --font: 'IBM Plex Sans', system-ui, sans-serif;
     --mono: 'IBM Plex Mono', monospace;
+    background: var(--sand);
+    font-family: var(--font);
   }
-
-  .aut-
 
   /* ── HERO ── */
   .aut .hero {
     color: var(--ink);
-    padding: 80px 48px 64px;
+    background: var(--sand);
+    padding: 72px 48px 64px;
     position: relative;
     overflow: hidden;
   }
@@ -79,10 +80,14 @@
   /* ── NAV ── */
   .aut .nav {
     position: sticky;
-    top: 0;
+    top: var(--site-header-h, 0px);
     background: var(--sand);
     z-index: 100;
     border-bottom: 1px solid var(--border);
+  }
+  /* Compensar header del sitio + nav interno al hacer scroll a anclas */
+  .aut .section {
+    scroll-margin-top: calc(var(--site-header-h, 0px) + 48px);
   }
   .aut .nav-inner {
     display: flex;
@@ -110,6 +115,7 @@
   /* ── LAYOUT ── */
   .aut .container { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
   .aut .section { padding: 72px 0; border-bottom: 1px solid var(--border); }
+  .aut .section:first-of-type { padding-top: 56px; }
   .aut .section:last-child { border-bottom: none; }
 
   .aut .section-eyebrow {
@@ -194,7 +200,6 @@
   .aut .synthesis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
   .aut .synth-card { background: #FFFAFA; border: 1px solid var(--border); border-radius: 4px; padding: 24px 28px; }
   .aut .synth-card-title { font-size: 14px; font-weight: 600; margin-bottom: 10px; }
-  .synth-card-
 
   /* ── PRODUCT DETAIL ── */
   .aut .prod-tabs { display: flex; gap: 0; margin-bottom: 32px; border-bottom: 1px solid var(--border); }
@@ -223,7 +228,7 @@
   .aut .conclusion-item { background: #FFFAFA; border: 1px solid var(--border); border-radius: 4px; padding: 24px 28px; }
   .aut .conclusion-num { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 6px; }
   .aut .conclusion-title { font-size: 14px; font-weight: 500; margin-bottom: 8px; color: var(--ink); }
-  .conclusion-
+  .aut .conclusion-body { font-size: 14px; color: var(--ink-muted); line-height: 1.7; }
   .aut .conclusion-body strong { font-weight: 500; color: var(--ink); }
 
   /* ── CORRECTION BOX ── */
@@ -235,7 +240,7 @@
     margin-bottom: 28px;
   }
   .aut .correction-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #8A6B1A; margin-bottom: 8px; }
-  .correction-
+  .aut .correction-body { font-size: 14px; color: var(--ink-muted); line-height: 1.7; }
   .aut .correction-body strong { font-weight: 500; color: var(--ink); }
 
   /* ── REFERENCES ── */
@@ -819,12 +824,24 @@ window.showProdAut = function(id, btn) {
   btn.classList.add('active');
 };;
 
+// Medir la altura real del header del sitio (masthead + tab-nav-wrap)
+// y exponerla como variable CSS para que el nav interno sepa dónde pegarse.
+function setHeaderOffset() {
+  const siteHeader = document.querySelector('header');
+  const h = siteHeader ? siteHeader.getBoundingClientRect().bottom : 0;
+  document.documentElement.style.setProperty('--site-header-h', Math.round(h) + 'px');
+}
+setHeaderOffset();
+window.addEventListener('resize', setHeaderOffset);
+
 // Nav active on scroll
-const navLinks = document.querySelectorAll('.nav a');
-const sections = document.querySelectorAll('.section');
+const navLinks = document.querySelectorAll('.aut .nav a');
+const sections = document.querySelectorAll('.aut .section');
+const siteHeaderEl = document.querySelector('header');
 window.addEventListener('scroll', () => {
+  const offset = siteHeaderEl ? siteHeaderEl.getBoundingClientRect().bottom + 8 : 80;
   let current = '';
-  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.id; });
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - offset) current = s.id; });
   navLinks.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + current); });
 });
 </script>
